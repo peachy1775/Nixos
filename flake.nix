@@ -4,6 +4,7 @@
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     stylix.url = "github:danth/stylix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixcord.url = "github:kaylorben/nixcord";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,7 +16,8 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs-stable, nixpkgs, home-manager, stylix,  ... }:
+  outputs =
+    inputs@{ nixpkgs-stable, nixpkgs, home-manager, stylix, nixcord, ... }:
     let
       system = "x86_64-linux";
 
@@ -42,6 +44,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
+              sharedModules = [ inputs.nixcord.homeModules.nixcord ];
               users.peaches = ./home/home.nix;
               extraSpecialArgs = {
                 inherit pkgs unstable stable inputs;
@@ -49,6 +52,7 @@
               };
             };
           }
+          stylix.nixosModules.stylix
         ];
       };
       formatter.${system} = pkgs.nixfmt-classic;

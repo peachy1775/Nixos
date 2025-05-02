@@ -1,7 +1,7 @@
 { nixpkgs, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ ./stylix.nix ./hardware-configuration.nix ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -24,7 +24,7 @@
         enable = true;
         wayland = true;
       };
-      videoDrivers = ["intel"];
+      videoDrivers = [ "intel" ];
       xkb = {
         layout = "us";
         options = "eurosign:e,caps:escape";
@@ -43,8 +43,6 @@
   services.getty.autologinUser = "peaches";
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowInsecure = true;
-  nixpkgs.config.permittedInsecurePackages = [ "openssl-1.1.1w" ];
 
   environment.variables = {
     GDK_SCALE = "1";
@@ -97,16 +95,7 @@
       fzf
       killall
       file
-      slurp
-      grim
-      btop
-      vesktop
-      sublime4
-      unzip
-      tree
-      swww
-      vlc
-      waybar
+      xfce.thunar
     ];
   };
 

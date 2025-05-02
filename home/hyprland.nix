@@ -1,6 +1,5 @@
-{ config, pkgs, lib, ... }:
-{
-  imports = [];
+{ config, pkgs, lib, ... }: {
+  imports = [ ];
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -13,6 +12,7 @@
         "ghostty &"
         "brave &"
         "waybar &"
+        "swww-daemon &"
       ];
 
       # General settings
@@ -33,23 +33,17 @@
         };
       };
 
-      animations = {
-        enabled = true;
-      };
+      animations = { enabled = true; };
 
       # Inputs (keyboard & mouse)
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0.5;
-        touchpad = {
-            natural_scroll = true;
-        };
+        touchpad = { natural_scroll = true; };
       };
 
-      render = {
-        explicit_sync = false;
-      };
+      render = { explicit_sync = false; };
 
       dwindle = {
         pseudotile = true;
@@ -66,8 +60,9 @@
         "SUPER, V, exec, clipman pick -t rofi"
         "SUPER, B, exec, brave"
         "SUPER, C, killactive"
-        "SUPER, O, exec, proton-pass"
-        "SUPER, P, exec, protonmmail-desktop"
+        "SUPER, P, exec, proton-pass"
+        "SUPER, M, exec, protonmmail-desktop"
+        "SUPER, S, exec, teams-for-linux"
         "SUPER ALT SHIFT, Q, exit"
         "ALT LSHIFT, F10, exec, playerctl previous"
         "ALT LSHIFT, F11, exec, playerctl play-pause"
@@ -86,19 +81,19 @@
         "SUPER SHIFT, 4, movetoworkspace, 4"
         "SUPER, 5, workspace, 5"
         "SUPER SHIFT, 5, movetoworkspace, 5"
+        "SUPER, mouse_up, workspace, e-1"
+        "SUPER, mouse_down, workspace, e+1"
       ];
 
       # Mouse bindings
-      bindm = [
-        "SUPER, mouse:272, movewindow"
-        "SUPER, mouse:273, resizewindow"
-      ];
+      bindm =
+        [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
 
       windowrulev2 = [
-          "pin, title:Picture-in-Picture"
-          "float, title:Picture-in-Picture"
-          "size 640 360, title:Picture-in-Picture"
-          "pin, title:Picture-in-Picture"
+        "pin, title:Picture-in-Picture"
+        "float, title:Picture-in-Picture"
+        "size 640 360, title:Picture-in-Picture"
+        "pin, title:Picture-in-Picture"
       ];
     };
   };
