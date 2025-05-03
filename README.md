@@ -1,2 +1,2 @@
+![noneofetch](https://github.com/user-attachments/assets/b6f3e42d-bbd4-4281-8429-06c05b424f8e)
 
-![githubSS](https://github.com/user-attachments/assets/04ac8ee4-0a71-47d1-b286-e31e4119c0a6)
