@@ -80,6 +80,7 @@
   users.users.peaches = {
     isNormalUser = true;
     description = "peaches";
+    shell = pkgs.nushell;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       zsh
@@ -89,13 +90,14 @@
       qemu
       proton-pass
       protonmail-desktop
-      rofi
+      wofi
       ghostty
       pavucontrol
       fzf
       killall
       file
       xfce.thunar
+      playerctl
     ];
   };
 

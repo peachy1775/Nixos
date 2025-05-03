@@ -6,9 +6,13 @@
     settings = {
       monitor = "DP-4,preferred,auto,2";
 
-      # Auto-launching
+      # Auto-launing
       exec-once = [
         "hyprctl dispatch workspace 1"
+        "hyprctl dispatch workspace 2"
+        "hyprctl dispatch workspace 3"
+        "hyprctl dispatch workspace 4"
+        "hyprctl dispatch workspace 5"
         "ghostty &"
         "brave &"
         "waybar &"
@@ -56,12 +60,11 @@
         "SUPER, Z, exec, zeditor"
         "SUPER, D, exec, vesktop"
         "SUPER, T, exec, thunar"
-        "SUPER, Space, exec, rofi -show drun"
-        "SUPER, V, exec, clipman pick -t rofi"
+        "SUPER, Space, exec, wofi --show drun"
         "SUPER, B, exec, brave"
         "SUPER, C, killactive"
         "SUPER, P, exec, proton-pass"
-        "SUPER, M, exec, protonmmail-desktop"
+        "SUPER, M, exec, proton-mail"
         "SUPER, S, exec, teams-for-linux"
         "SUPER ALT SHIFT, Q, exit"
         "ALT LSHIFT, F10, exec, playerctl previous"
@@ -81,8 +84,18 @@
         "SUPER SHIFT, 4, movetoworkspace, 4"
         "SUPER, 5, workspace, 5"
         "SUPER SHIFT, 5, movetoworkspace, 5"
+        "SUPER, 6, workspace, 6"
+        "SUPER SHIFT, 6, movetoworkspace, 6"
         "SUPER, mouse_up, workspace, e-1"
         "SUPER, mouse_down, workspace, e+1"
+        ", XF86AudioRaiseVolume, exec, vol --up"
+        ", XF86AudioLowerVolume, exec, vol --down"
+      ];
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioPlay, exec, playerctl play-pause"
+        ", XF86AudioNext, exec, playerctl next"
+        ", XF86AudioPrev, exec, playerctl previous"
       ];
 
       # Mouse bindings

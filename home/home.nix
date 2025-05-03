@@ -1,7 +1,7 @@
 { pkgs, config, username, ... }:
 
 {
-  imports = [ ./hyprland.nix ./stylixTargets.nix ];
+  imports = [ ./hyprland.nix ./stylixTargets.nix ./waybar.nix ./fastfetch.nix ];
   home = {
     inherit username;
     homeDirectory = "/home/peaches";
@@ -16,7 +16,14 @@
         source = ./config/ghostty;
         recursive = true;
       };
+      ".config/starship.toml" = {
+        source = ./config/starship.toml;
+      };
+      ".config/fastfetch/nixos.png" = {
+        source = ./config/fastfetch/nixos.png;
+      };
     };
+
 
     packages = with pkgs; [
       brave
@@ -32,7 +39,10 @@
       mpv
       nil
       nixd
-
+      proton-pass
+      protonmail-desktop
+      wireplumber
+      nushellPlugins.polars
     ];
 
   };
@@ -42,6 +52,27 @@
     git.userName = "Dont_Matta";
     git.userEmail = "204289133+peachy1775@users.noreply.github.com";
     zed-editor.enable = true;
+    nushell = {
+      enable = true;
+      configFile.source = ./config/config.nu;
+    };
+
+    starship = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+      enableNushellIntegration = true;
+      options = [ "--cmd cd" ];
+    };
     nixcord = {
       enable = true;
       discord.enable = false;
@@ -82,6 +113,5 @@
         };
       };
     };
-
   };
 }
