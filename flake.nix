@@ -45,7 +45,7 @@
               useUserPackages = true;
               backupFileExtension = "backup";
               sharedModules = [ inputs.nixcord.homeModules.nixcord ];
-              users.peaches = ./home/home.nix;
+              users.peaches = ./config/home/home.nix;
               extraSpecialArgs = {
                 inherit pkgs unstable stable inputs;
                 username = "peaches";

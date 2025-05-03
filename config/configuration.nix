@@ -1,4 +1,4 @@
-{ nixpkgs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./stylix.nix ./hardware-configuration.nix ];
@@ -9,6 +9,7 @@
     kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
     loader = {
       systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 5;
       efi.canTouchEfiVariables = true;
     };
   };
@@ -51,6 +52,8 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     XCURSOR_SIZE = "48";
     WLR_DPI = "192";
+    GTK_USE_PORTAL = "1";  # Enable GTK portals for filechooser
+    XDG_CURRENT_DESKTOP = "Hyprland";  # Set Hyprland as the current desktop
   };
 
   # BLUETOOTH #
