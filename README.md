@@ -1,2 +1,2 @@
-# Nixos![2025-05-03-164701_hyprshot](https://github.com/user-attachments/assets/d04156e0-09e4-4895-a146-8a0294de6863)
 
+![githubSS](https://github.com/user-attachments/assets/04ac8ee4-0a71-47d1-b286-e31e4119c0a6)
