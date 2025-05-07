@@ -37,7 +37,7 @@
       nixosConfigurations.peaches = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./config/configuration.nix
+          ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -45,7 +45,7 @@
               useUserPackages = true;
               backupFileExtension = "backup";
               sharedModules = [ inputs.nixcord.homeModules.nixcord ];
-              users.peaches = ./config/home/home.nix;
+              users.peaches = ./home/home.nix;
               extraSpecialArgs = {
                 inherit pkgs unstable stable inputs;
                 username = "peaches";
