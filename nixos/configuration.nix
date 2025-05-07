@@ -1,9 +1,15 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./stylix.nix ./hardware-configuration.nix ];
+  imports = [
+    ./stylix.nix
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
@@ -52,8 +58,8 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     XCURSOR_SIZE = "48";
     WLR_DPI = "192";
-    GTK_USE_PORTAL = "1";  # Enable GTK portals for filechooser
-    XDG_CURRENT_DESKTOP = "Hyprland";  # Set Hyprland as the current desktop
+    GTK_USE_PORTAL = "1"; # Enable GTK portals for filechooser
+    XDG_CURRENT_DESKTOP = "Hyprland"; # Set Hyprland as the current desktop
   };
 
   # BLUETOOTH #
@@ -84,7 +90,10 @@
     isNormalUser = true;
     description = "peaches";
     shell = pkgs.nushell;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       zsh
       mpv

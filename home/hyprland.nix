@@ -1,4 +1,4 @@
-_:  {
+_: {
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -37,17 +37,23 @@ _:  {
         };
       };
 
-      animations = { enabled = true; };
+      animations = {
+        enabled = true;
+      };
 
       # Inputs (keyboard & mouse)
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0.5;
-        touchpad = { natural_scroll = true; };
+        touchpad = {
+          natural_scroll = true;
+        };
       };
 
-      render = { explicit_sync = false; };
+      render = {
+        explicit_sync = false;
+      };
 
       dwindle = {
         pseudotile = true;
@@ -100,8 +106,10 @@ _:  {
       ];
 
       # Mouse bindings
-      bindm =
-        [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
+      bindm = [
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
+      ];
 
       windowrulev2 = [
         "pin, title:Picture-in-Picture"
