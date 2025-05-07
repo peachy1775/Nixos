@@ -1,7 +1,12 @@
 { pkgs, username, ... }:
 
 {
-  imports = [ ./hyprland.nix ./stylixTargets.nix ./waybar.nix ./fastfetch.nix ];
+  imports = [
+    ./hyprland.nix
+    ./stylixTargets.nix
+    ./waybar.nix
+    ./fastfetch.nix
+  ];
   home = {
     inherit username;
     homeDirectory = "/home/peaches";
@@ -23,7 +28,6 @@
         source = ./config/fastfetch/nixos.png;
       };
     };
-
 
     packages = with pkgs; [
       brave
@@ -48,7 +52,6 @@
       feh
       sxiv
     ];
-
   };
 
   programs = {

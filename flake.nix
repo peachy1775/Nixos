@@ -5,6 +5,7 @@
     stylix.url = "github:danth/stylix";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixcord.url = "github:kaylorben/nixcord";
+    treefmt-nix.url = "github:numtide/treefmt-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -17,7 +18,14 @@
   };
 
   outputs =
-    inputs@{ nixpkgs-stable, nixpkgs, home-manager, stylix, nixcord, ... }:
+    inputs@{
+      nixpkgs-stable,
+      nixpkgs,
+      home-manager,
+      stylix,
+      nixcord,
+      ...
+    }:
     let
       system = "x86_64-linux";
 
@@ -33,11 +41,12 @@
       };
       pkgs = unstable;
 
-    in {
+    in
+    {
       nixosConfigurations.peaches = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./config/configuration.nix
+          ./nixos/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -45,9 +54,14 @@
               useUserPackages = true;
               backupFileExtension = "backup";
               sharedModules = [ inputs.nixcord.homeModules.nixcord ];
-              users.peaches = ./config/home/home.nix;
+              users.peaches = ./home/home.nix;
               extraSpecialArgs = {
-                inherit pkgs unstable stable inputs;
+                inherit
+                  pkgs
+                  unstable
+                  stable
+                  inputs
+                  ;
                 username = "peaches";
               };
             };
@@ -55,6 +69,9 @@
           stylix.nixosModules.stylix
         ];
       };
-      formatter.${system} = pkgs.nixfmt-classic;
+      formatter.${system} = inputs.treefmt-nix.lib.mkWrapper pkgs {
+        projectRootFile = "flake.nix";
+        programs.nixfmt.enable = true;
+      };
     };
 }
