@@ -4,7 +4,6 @@
   imports = [
     ./hyprland.nix
     ./stylixTargets.nix
-    ./waybar.nix
     ./fastfetch.nix
   ];
   home = {
@@ -27,6 +26,12 @@
       ".config/fastfetch/nixos.png" = {
         source = ./config/fastfetch/nixos.png;
       };
+      ".config/waybar/config.jsonc"={
+        source =./config/waybar/config.json;
+      };
+      ".config/waybar/style.css"={
+        source = ./config/waybar/style.css;
+        };
     };
 
     packages = with pkgs; [

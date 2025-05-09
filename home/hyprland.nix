@@ -8,15 +8,11 @@ _: {
       # Auto-launing
       exec-once = [
         "hyprctl dispatch workspace 1"
-        "hyprctl dispatch workspace 2"
-        "hyprctl dispatch workspace 3"
-        "hyprctl dispatch workspace 4"
-        "hyprctl dispatch workspace 5"
         "ghostty &"
         "brave &"
         "waybar &"
         "swww-daemon &"
-        "virt-manager &"
+        "hyprctl dispatch workspace 1"
       ];
 
       # General settings
@@ -97,6 +93,10 @@ _: {
         "SUPER, mouse_down, workspace, e-1"
         ", XF86AudioRaiseVolume, exec, vol --up"
         ", XF86AudioLowerVolume, exec, vol --down"
+        "SUPER, left, movefocus, l"
+        "SUPER, right, movefocus, r"
+        "SUPER, up, movefocus, u"
+        "SUPER, down, movefocus, d"
       ];
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
@@ -107,8 +107,8 @@ _: {
 
       # Mouse bindings
       bindm = [
-        "SUPER, mouse:272, movewindow"
         "SUPER, mouse:273, resizewindow"
+        "SUPER, mouse:272, movewindow"
       ];
 
       windowrulev2 = [
