@@ -95,21 +95,30 @@
       "wheel"
     ];
     packages = with pkgs; [
-      zsh
-      mpv
-      tmux
-      virt-manager
-      qemu
-      proton-pass
-      protonmail-desktop
-      wofi
-      ghostty
-      pavucontrol
-      fzf
-      killall
+      blueman
+      brightnessctl
+      curl
+      dunst
       file
-      xfce.thunar
+      gdk-pixbuf
+      ghostty
+      git
+      gtk3
+      hyprland
+      killall
+      mpv
+      pipewire
       playerctl
+      pulseaudio
+      pavucontrol
+      tmux
+      wayland
+      wget
+      wl-clipboard
+      xfce.thunar
+      xorg.xprop
+      xorg.xrdb
+
     ];
   };
 

@@ -36,26 +36,35 @@
 
     packages = with pkgs; [
       brave
-      teams-for-linux
-      waybar
-      swww
-      unzip
-      tree
-      vlc
-      slurp
-      grim
       btop
-      mpv
+      chromium
+      file
+      fzf
+      grim
+      htop
+      hyprshot
+      neovim
       nil
       nixd
+      nushellPlugins.polars
       proton-pass
       protonmail-desktop
-      wireplumber
-      nushellPlugins.polars
-      chromium
-      hyprshot
-      feh
+      qemu
+      ripgrep
+      slurp
       sxiv
+      swww
+      teams-for-linux
+      tree
+      unzip
+      virt-manager
+      vlc
+      waybar
+      wireplumber
+      wofi
+      zed-editor
+      zsh
+
     ];
   };
 
