@@ -36,35 +36,48 @@
 
     packages = with pkgs; [
       brave
-      btop
-      chromium
-      file
-      fzf
-      grim
-      htop
-      hyprshot
-      neovim
-      nil
-      nixd
-      nushellPlugins.polars
-      proton-pass
-      protonmail-desktop
-      qemu
-      ripgrep
-      slurp
-      sxiv
-      swww
-      teams-for-linux
-      tree
-      unzip
-      virt-manager
-      vlc
-      waybar
-      wireplumber
-      wofi
-      zed-editor
-      zsh
-
+        blueman
+        brightnessctl
+        btop
+        chromium
+        curl
+        dunst
+        file
+        fzf
+        gdk-pixbuf
+        ghostty
+        git
+        grim
+        gtk3
+        htop
+        hyprshot
+        killall
+        mpv
+        neovim
+        nil
+        nixd
+        nushellPlugins.polars
+        pavucontrol
+        playerctl
+        proton-pass
+        protonmail-desktop
+        ripgrep
+        slurp
+        swww
+        sxiv
+        teams-for-linux
+        tree
+        tmux
+        unzip
+        vlc
+        waybar
+        wget
+        wl-clipboard
+        wofi
+        xorg.xprop
+        xfce.thunar
+        zed-editor
+        zsh
     ];
   };
 

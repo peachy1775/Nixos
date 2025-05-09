@@ -95,29 +95,13 @@
       "wheel"
     ];
     packages = with pkgs; [
-      blueman
-      brightnessctl
-      curl
-      dunst
-      file
-      gdk-pixbuf
-      ghostty
-      git
-      gtk3
       hyprland
-      killall
-      mpv
       pipewire
-      playerctl
       pulseaudio
-      pavucontrol
-      tmux
+      qemu
+      virt-manager
       wayland
-      wget
-      wl-clipboard
-      xfce.thunar
-      xorg.xprop
-      xorg.xrdb
+      wireplumber
 
     ];
   };
