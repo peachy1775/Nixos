@@ -21,11 +21,7 @@ export def nixos-rbld [] {
   cd $currDir
 }
 
-if not ("x" in $env) {
-  fastfetch # Flex your OS.
-}
 
-$env.x = true
 
 export def dev [] {
   nix develop --command nu

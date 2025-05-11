@@ -13,14 +13,15 @@ _: {
         "waybar &"
         "swww-daemon &"
         "hyprctl dispatch workspace 1"
+        "code"
       ];
 
       # General settings
       general = {
         gaps_in = 2;
         gaps_out = 5;
-        "col.active_border" = "rgb(7800e3) rgb(c452e0) 45deg";
-        "col.inactive_border" = "rgba(00000000)";
+        #"col.active_border" = "rgb(7800e3) rgb(c452e0) 45deg";
+        #"col.inactive_border" = "rgba(00000000)";
       };
 
       decoration = {
@@ -59,7 +60,7 @@ _: {
       # Keybinds
       bind = [
         "SUPER, Q, exec, ghostty"
-        "SUPER, Z, exec, zeditor"
+        "SUPER, Z, exec, code"
         "SUPER, D, exec, vesktop"
         "SUPER, F, exec, thunar"
         "SUPER, Space, exec, wofi --show drun"

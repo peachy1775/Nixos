@@ -58,8 +58,10 @@
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
     XCURSOR_SIZE = "48";
     WLR_DPI = "192";
-    GTK_USE_PORTAL = "1"; # Enable GTK portals for filechooser
-    XDG_CURRENT_DESKTOP = "Hyprland"; # Set Hyprland as the current desktop
+    GTK_USE_PORTAL = "1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
   };
 
   # BLUETOOTH #
@@ -68,10 +70,14 @@
   hardware.pulseaudio.enable = false;
 
   # input and display
-  services.dbus.enable = true;
   xdg.portal = {
     enable = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-wlr ];
+    wlr.enable = true;
+    config.common.default = "*"; # optional but useful
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
+    ];
   };
 
   # VIRT
@@ -102,6 +108,7 @@
       virt-manager
       wayland
       wireplumber
+      xdg-desktop-portal-hyprland
 
     ];
   };

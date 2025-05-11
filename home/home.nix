@@ -6,13 +6,20 @@
     ./stylixTargets.nix
     ./fastfetch.nix
   ];
+
   home = {
     inherit username;
     homeDirectory = "/home/peaches";
     stateVersion = "24.11";
+
     sessionVariables = {
-      EDITOR = "nvim";
-      GIT_EDITOR = "nvim";
+      EDITOR = "vscode";
+      GIT_EDITOR = "vscode";
+
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "Hyprland";
+      GTK_USE_PORTAL = "1";
     };
 
     file = {
@@ -26,66 +33,80 @@
       ".config/fastfetch/nixos.png" = {
         source = ./config/fastfetch/nixos.png;
       };
-      ".config/waybar/config.jsonc"={
-        source =./config/waybar/config.json;
+      ".config/waybar/config.jsonc" = {
+        source = ./config/waybar/config.json;
       };
-      ".config/waybar/style.css"={
+      ".config/waybar/style.css" = {
         source = ./config/waybar/style.css;
-        };
+      };
     };
 
     packages = with pkgs; [
-      brave
-        blueman
-        brightnessctl
-        btop
-        chromium
-        curl
-        dunst
-        file
-        fzf
-        gdk-pixbuf
-        ghostty
-        git
-        grim
-        gtk3
-        htop
-        hyprshot
-        killall
-        mpv
-        neovim
-        nil
-        nixd
-        nushellPlugins.polars
-        pavucontrol
-        playerctl
-        proton-pass
-        protonmail-desktop
-        ripgrep
-        slurp
-        swww
-        sxiv
-        teams-for-linux
-        tree
-        tmux
-        unzip
-        vlc
-        waybar
-        wget
-        wl-clipboard
-        wofi
-        xorg.xprop
-        xfce.thunar
-        zed-editor
-        zsh
+      brave blueman brightnessctl btop chromium curl dunst file fzf
+      gdk-pixbuf ghostty git grim gtk3 htop hyprshot killall mpv
+      neovim nil nixd nushellPlugins.polars pavucontrol playerctl
+      proton-pass protonmail-desktop ripgrep slurp swww sxiv
+      teams-for-linux tree tmux unzip vlc waybar wget wl-clipboard
+      wofi xorg.xprop xfce.thunar zed-editor zsh alejandra
+      carapace
     ];
   };
 
   programs = {
-    git.enable = true;
-    git.userName = "Dont_Matta";
-    git.userEmail = "204289133+peachy1775@users.noreply.github.com";
+    vscode = {
+      enable = true;
+
+      extensions = with pkgs.vscode-extensions; [
+        ms-python.python
+        ms-python.vscode-pylance
+        ms-toolsai.jupyter
+        charliermarsh.ruff
+        ms-python.black-formatter
+        ms-vscode.cpptools
+        llvm-vs-code-extensions.vscode-clangd
+        esbenp.prettier-vscode
+        eamodio.gitlens
+        mhutchie.git-graph
+        vscode-icons-team.vscode-icons
+        jnoortheen.nix-ide
+        catppuccin.catppuccin-vsc
+      ];
+
+userSettings = {
+  "workbench.colorTheme" = "Catppuccin Mocha";
+  "telemetry.enableTelemetry" = false;
+  "telemetry.enableCrashReporter" = false;
+  "telemetry.telemetryLevel" = "off";
+  "explorer.compactFolders" = false;
+  "editor.wordWrap" = "on";
+  "editor.formatOnSave" = true;
+
+  # Nix formatting with nil
+  "[nix]" = {
+    "editor.defaultFormatter" = "unknown.formatter.nil";
+  };
+  "nix.formatterPath" = "nil";
+
+  "[python]" = {
+    "editor.defaultFormatter" = "ms-python.black-formatter";
+  };
+  "[cpp]" = {
+    "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
+  };
+  "[c]" = {
+    "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
+  };
+};  
+    };
+
+    git = {
+      enable = true;
+      userName = "Dont_Matta";
+      userEmail = "204289133+peachy1775@users.noreply.github.com";
+    };
+
     zed-editor.enable = true;
+
     nushell = {
       enable = true;
       configFile.source = ./config/config.nu;
@@ -107,6 +128,7 @@
       enableNushellIntegration = true;
       options = [ "--cmd cd" ];
     };
+
     nixcord = {
       enable = true;
       discord.enable = false;
