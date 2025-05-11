@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -51,18 +51,38 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.variables = {
-    GDK_SCALE = "1";
-    GDK_DPI_SCALE = "1.5";
-    QT_SCALE_FACTOR = "1.5";
-    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    XCURSOR_SIZE = "48";
-    WLR_DPI = "192";
-    GTK_USE_PORTAL = "1";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-  };
+environment = {
+    variables = {
+      GDK_SCALE = "1";
+      GDK_DPI_SCALE = "1.5";
+      QT_SCALE_FACTOR = "1.5";
+      QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+      XCURSOR_SIZE = "48";
+      WLR_DPI = "192";
+      GTK_USE_PORTAL = "1";
+      XDG_CURRENT_DESKTOP = "Hyprland";
+      XDG_SESSION_DESKTOP = "Hyprland";
+      XDG_SESSION_TYPE = "wayland";
+    };
+};
+   environment.etc."hosts".text = lib.mkForce  ''
+      127.0.0.1 localhost
+      ::1 localhost
+      127.0.0.2 peaches
+
+      # Block Visual Studio Code telemetry
+      0.0.0.0 az764295.vo.msecnd.net
+      0.0.0.0 vscode-sync.trafficmanager.net
+      0.0.0.0 vscode-update.azurewebsites.net
+      0.0.0.0 vscode.azureedge.net
+      0.0.0.0 marketplace.visualstudio.com
+      0.0.0.0 vscode.market.visualstudio.com
+      0.0.0.0 default.exp-tas.com
+      0.0.0.0 dc.services.visualstudio.com
+      0.0.0.0 telemetry.visualstudio.com
+      0.0.0.0 settings-prod.api.visualstudio.com
+      0.0.0.0 msedge.api.cdp.microsoft.com
+    '';
 
   # BLUETOOTH #
   hardware.bluetooth.enable = true;
