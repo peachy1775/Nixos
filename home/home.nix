@@ -48,7 +48,7 @@
       proton-pass protonmail-desktop ripgrep slurp swww sxiv
       teams-for-linux tree tmux unzip vlc waybar wget wl-clipboard
       wofi xorg.xprop xfce.thunar zed-editor zsh alejandra
-      carapace
+      carapace screenfetch sl pipes cmatrix asciiquarium aalib nyancat bb
     ];
   };
 

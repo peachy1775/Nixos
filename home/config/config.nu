@@ -1,7 +1,7 @@
 $env.config.show_banner = false;
 $env.config.use_kitty_protocol = true;
-$env.config.buffer_editor = "zeditor";
-$env.editor = "zeditor";
+$env.config.buffer_editor = "code";
+$env.editor = "code";
 
 # ENV's
 $env.XDG_CONFIG_DIRS = $"($env.XDG_CONFIG_DIRS):($env.HOME)/.config"
@@ -20,9 +20,11 @@ export def nixos-rbld [] {
   sudo nixos-rebuild switch --flake $".#((open config.toml).user.username)" --impure
   cd $currDir
 }
-
-
-
+alias clear = do {
+  ^clear
+  screenfetch
+}
 export def dev [] {
   nix develop --command nu
 }
+screenfetch

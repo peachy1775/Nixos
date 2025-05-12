@@ -69,8 +69,7 @@ environment = {
       127.0.0.1 localhost
       ::1 localhost
       127.0.0.2 peaches
-
-      # Block Visual Studio Code telemetry
+      # VS Code core telemetry and update services
       0.0.0.0 az764295.vo.msecnd.net
       0.0.0.0 vscode-sync.trafficmanager.net
       0.0.0.0 vscode-update.azurewebsites.net
@@ -82,7 +81,25 @@ environment = {
       0.0.0.0 telemetry.visualstudio.com
       0.0.0.0 settings-prod.api.visualstudio.com
       0.0.0.0 msedge.api.cdp.microsoft.com
-    '';
+      0.0.0.0 az416426.vo.msecnd.net
+      0.0.0.0 vortex.data.microsoft.com
+      0.0.0.0 go.microsoft.com
+      0.0.0.0 errors.edge.microsoft.com
+
+      # Authentication and Microsoft account login
+      0.0.0.0 login.microsoftonline.com
+      0.0.0.0 login.live.com
+      0.0.0.0 aadcdn.msauth.net
+      0.0.0.0 aadcdn.msftauth.net
+
+      # Extension gallery and assets
+      0.0.0.0 gallerycdn.vsassets.io
+      0.0.0.0 msassets.visualstudio.com
+
+      # Optional - wildcard block (note: /etc/hosts doesn't support wildcards)
+      # Use Pi-hole or custom DNS for these
+      # *.events.data.microsoft.com  
+   '';
 
   # BLUETOOTH #
   hardware.bluetooth.enable = true;
