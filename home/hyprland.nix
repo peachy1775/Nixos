@@ -13,7 +13,6 @@ _: {
         "waybar &"
         "swww-daemon &"
         "hyprctl dispatch workspace 1"
-        "code"
       ];
 
       # General settings

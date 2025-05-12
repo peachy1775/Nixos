@@ -6,6 +6,11 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings = {
+    max-jobs = "auto";
+    cores = 0;
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -87,11 +92,11 @@ environment = {
       0.0.0.0 errors.edge.microsoft.com
 
       # Authentication and Microsoft account login
-      0.0.0.0 login.microsoftonline.com
-      0.0.0.0 login.live.com
-      0.0.0.0 aadcdn.msauth.net
-      0.0.0.0 aadcdn.msftauth.net
-
+      #0.0.0.0 login.microsoftonline.com
+      #0.0.0.0 login.live.com
+      #0.0.0.0 aadcdn.msauth.net
+      #0.0.0.0 aadcdn.msftauth.net
+      
       # Extension gallery and assets
       0.0.0.0 gallerycdn.vsassets.io
       0.0.0.0 msassets.visualstudio.com
@@ -104,7 +109,7 @@ environment = {
   # BLUETOOTH #
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # input and display
   xdg.portal = {

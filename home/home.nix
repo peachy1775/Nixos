@@ -48,7 +48,8 @@
       proton-pass protonmail-desktop ripgrep slurp swww sxiv
       teams-for-linux tree tmux unzip vlc waybar wget wl-clipboard
       wofi xorg.xprop xfce.thunar zed-editor zsh alejandra
-      carapace screenfetch sl pipes cmatrix asciiquarium aalib nyancat bb
+      carapace screenfetch sl pipes cmatrix asciiquarium aalib nyancat
+      bb bat
     ];
   };
 
@@ -56,47 +57,49 @@
     vscode = {
       enable = true;
 
-      extensions = with pkgs.vscode-extensions; [
-        ms-python.python
-        ms-python.vscode-pylance
-        ms-toolsai.jupyter
-        charliermarsh.ruff
-        ms-python.black-formatter
-        ms-vscode.cpptools
-        llvm-vs-code-extensions.vscode-clangd
-        esbenp.prettier-vscode
-        eamodio.gitlens
-        mhutchie.git-graph
-        vscode-icons-team.vscode-icons
-        jnoortheen.nix-ide
-        catppuccin.catppuccin-vsc
-      ];
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          ms-python.python
+          ms-python.vscode-pylance
+          ms-toolsai.jupyter
+          charliermarsh.ruff
+          ms-python.black-formatter
+          ms-vscode.cpptools
+          llvm-vs-code-extensions.vscode-clangd
+          esbenp.prettier-vscode
+          eamodio.gitlens
+          mhutchie.git-graph
+          vscode-icons-team.vscode-icons
+          jnoortheen.nix-ide
+          catppuccin.catppuccin-vsc
+        ];
 
-userSettings = {
-  "workbench.colorTheme" = "Catppuccin Mocha";
-  "telemetry.enableTelemetry" = false;
-  "telemetry.enableCrashReporter" = false;
-  "telemetry.telemetryLevel" = "off";
-  "explorer.compactFolders" = false;
-  "editor.wordWrap" = "on";
-  "editor.formatOnSave" = true;
+        userSettings = {
+          "workbench.colorTheme" = "Catppuccin Mocha";
+          "telemetry.enableTelemetry" = false;
+          "telemetry.enableCrashReporter" = false;
+          "telemetry.telemetryLevel" = "off";
+          "explorer.compactFolders" = false;
+          "editor.wordWrap" = "on";
+          "editor.formatOnSave" = true;
 
-  # Nix formatting with nil
-  "[nix]" = {
-    "editor.defaultFormatter" = "unknown.formatter.nil";
-  };
-  "nix.formatterPath" = "nil";
+          # Nix formatting with nil
+          "[nix]" = {
+            "editor.defaultFormatter" = "unknown.formatter.nil";
+          };
+          "nix.formatterPath" = "nil";
 
-  "[python]" = {
-    "editor.defaultFormatter" = "ms-python.black-formatter";
-  };
-  "[cpp]" = {
-    "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
-  };
-  "[c]" = {
-    "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
-  };
-};  
+          "[python]" = {
+            "editor.defaultFormatter" = "ms-python.black-formatter";
+          };
+          "[cpp]" = {
+            "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
+          };
+          "[c]" = {
+            "editor.defaultFormatter" = "llvm-vs-code-extensions.vscode-clangd";
+          };
+        };
+      };
     };
 
     git = {
@@ -169,5 +172,12 @@ userSettings = {
         };
       };
     };
+  };
+  # Optional: improve build speed from user-level (limited)
+  nixpkgs = {
+  config = {
+    max-jobs = "auto";
+    cores = 0;
+  };
   };
 }
