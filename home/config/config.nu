@@ -3,14 +3,23 @@ $env.config.use_kitty_protocol = true;
 $env.config.buffer_editor = "code";
 $env.editor = "code";
 
+screenfetch
+
 # ENV's
 $env.XDG_CONFIG_DIRS = $"($env.XDG_CONFIG_DIRS):($env.HOME)/.config"
 
+# Custom commands instead of aliases with args
+def nv [...args] { nvim $args.0 }
+def ncim [...args] { nvim $args.0 }
+def gc [...args] { git clone $args.0 }
+def v [...args] { code $args.0 }
+
+# Custom 'cd' command
 alias d = cd
-alias nv = nvim
-alias ncim = nvim
-alias gc = git clone
-alias spf = superfile
+
+# Still works as a regular alias since it's a fixed command
+alias nfs = sudo nixos-rebuild switch --flake .#peaches
+alias nfu = sudo nixos-rebuild switch --flake .#peaches --update
 
 export def nixos-rbld [] {
   let currDir = $"(pwd)"
@@ -27,4 +36,4 @@ alias clear = do {
 export def dev [] {
   nix develop --command nu
 }
-screenfetch
+
