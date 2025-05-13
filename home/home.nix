@@ -22,7 +22,7 @@
       XDG_SESSION_DESKTOP = "Hyprland";
       GTK_USE_PORTAL = "1";
     };
-
+ 
     file = {
       ".config/ghostty" = {
         source = ./config/ghostty;
@@ -43,19 +43,65 @@
     };
 
     packages = with pkgs; [
-      brave blueman brightnessctl btop chromium curl dunst file fzf
-      gdk-pixbuf ghostty git grim gtk3 htop hyprshot killall mpv
-      neovim nil nixd nushellPlugins.polars pavucontrol playerctl
-      proton-pass protonmail-desktop ripgrep slurp swww sxiv
-      teams-for-linux tree tmux unzip vlc waybar wget wl-clipboard
-      wofi xorg.xprop xfce.thunar zed-editor zsh alejandra
-      carapace screenfetch sl pipes cmatrix asciiquarium aalib nyancat
-      bb bat
+      brave
+      blueman
+      brightnessctl
+      btop
+      chromium
+      curl
+      dunst
+      file
+      fzf
+      gdk-pixbuf
+      ghostty
+      git
+      grim
+      gtk3
+      htop
+      hyprshot
+      killall
+      mpv
+      neovim
+      nil
+      nixd
+      nushellPlugins.polars
+      pavucontrol
+      playerctl
+      proton-pass
+      protonmail-desktop
+      ripgrep
+      slurp
+      swww
+      sxiv
+      teams-for-linux
+      tree
+      tmux
+      unzip
+      vlc
+      waybar
+      wget
+      wl-clipboard
+      wofi
+      xorg.xprop
+      xfce.thunar
+      zed-editor
+      zsh
+      alejandra
+      carapace
+      screenfetch
+      sl
+      pipes
+      cmatrix
+      asciiquarium
+      aalib
+      nyancat
+      bb
+      bat
     ];
   };
 
   programs = {
-    
+
     git = {
       enable = true;
       userName = "Dont_Matta";
@@ -129,9 +175,9 @@
   };
   # Optional: improve build speed from user-level (limited)
   nixpkgs = {
-  config = {
-    max-jobs = "auto";
-    cores = 0;
-  };
+    config = {
+      max-jobs = "auto";
+      cores = 0;
+    };
   };
 }

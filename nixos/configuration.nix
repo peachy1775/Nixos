@@ -56,7 +56,7 @@
 
   nixpkgs.config.allowUnfree = true;
 
-environment = {
+  environment = {
     variables = {
       GDK_SCALE = "1";
       GDK_DPI_SCALE = "1.5";
@@ -69,42 +69,42 @@ environment = {
       XDG_SESSION_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";
     };
-};
-   environment.etc."hosts".text = lib.mkForce  ''
-      127.0.0.1 localhost
-      ::1 localhost
-      127.0.0.2 peaches
-      # VS Code core telemetry and update services
-      0.0.0.0 az764295.vo.msecnd.net
-      0.0.0.0 vscode-sync.trafficmanager.net
-      0.0.0.0 vscode-update.azurewebsites.net
-      0.0.0.0 vscode.azureedge.net
-      0.0.0.0 marketplace.visualstudio.com
-      0.0.0.0 vscode.market.visualstudio.com
-      0.0.0.0 default.exp-tas.com
-      0.0.0.0 dc.services.visualstudio.com
-      0.0.0.0 telemetry.visualstudio.com
-      0.0.0.0 settings-prod.api.visualstudio.com
-      0.0.0.0 msedge.api.cdp.microsoft.com
-      0.0.0.0 az416426.vo.msecnd.net
-      0.0.0.0 vortex.data.microsoft.com
-      0.0.0.0 go.microsoft.com
-      0.0.0.0 errors.edge.microsoft.com
+  };
+  environment.etc."hosts".text = lib.mkForce ''
+    127.0.0.1 localhost
+    ::1 localhost
+    127.0.0.2 peaches
+    # VS Code core telemetry and update services
+    0.0.0.0 az764295.vo.msecnd.net
+    0.0.0.0 vscode-sync.trafficmanager.net
+    0.0.0.0 vscode-update.azurewebsites.net
+    0.0.0.0 vscode.azureedge.net
+    0.0.0.0 marketplace.visualstudio.com
+    0.0.0.0 vscode.market.visualstudio.com
+    0.0.0.0 default.exp-tas.com
+    0.0.0.0 dc.services.visualstudio.com
+    0.0.0.0 telemetry.visualstudio.com
+    0.0.0.0 settings-prod.api.visualstudio.com
+    0.0.0.0 msedge.api.cdp.microsoft.com
+    0.0.0.0 az416426.vo.msecnd.net
+    0.0.0.0 vortex.data.microsoft.com
+    0.0.0.0 go.microsoft.com
+    0.0.0.0 errors.edge.microsoft.com
 
-      # Authentication and Microsoft account login
-      #0.0.0.0 login.microsoftonline.com
-      #0.0.0.0 login.live.com
-      #0.0.0.0 aadcdn.msauth.net
-      #0.0.0.0 aadcdn.msftauth.net
-      
-      # Extension gallery and assets
-      0.0.0.0 gallerycdn.vsassets.io
-      0.0.0.0 msassets.visualstudio.com
+    # Authentication and Microsoft account login
+    #0.0.0.0 login.microsoftonline.com
+    #0.0.0.0 login.live.com
+    #0.0.0.0 aadcdn.msauth.net
+    #0.0.0.0 aadcdn.msftauth.net
 
-      # Optional - wildcard block (note: /etc/hosts doesn't support wildcards)
-      # Use Pi-hole or custom DNS for these
-      # *.events.data.microsoft.com  
-   '';
+    # Extension gallery and assets
+    0.0.0.0 gallerycdn.vsassets.io
+    0.0.0.0 msassets.visualstudio.com
+
+    # Optional - wildcard block (note: /etc/hosts doesn't support wildcards)
+    # Use Pi-hole or custom DNS for these
+    # *.events.data.microsoft.com  
+  '';
 
   # BLUETOOTH #
   hardware.bluetooth.enable = true;

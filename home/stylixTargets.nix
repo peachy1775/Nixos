@@ -15,7 +15,7 @@
       vesktop.enable = true;
       nixcord.enable = true;
       emacs.enable = true;
-    }; 
+    };
     fonts = {
       serif = {
         package = pkgs.dejavu_fonts;

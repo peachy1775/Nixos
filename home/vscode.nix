@@ -1,5 +1,6 @@
-    programs= {
-      vscode = {
+{pkgs, ...}: {
+  programs = {
+    vscode = {
       enable = true;
 
       profiles.default = {
@@ -46,4 +47,5 @@
         };
       };
     };
-  }
+  };
+}
