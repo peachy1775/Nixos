@@ -6,6 +6,7 @@
     ./stylixTargets.nix
     ./fastfetch.nix
     ./vscode.nix
+    ./neovim.nix
   ];
 
   home = {
@@ -61,7 +62,6 @@
       hyprshot
       killall
       mpv
-      neovim
       nil
       nixd
       nushellPlugins.polars
@@ -97,6 +97,7 @@
       nyancat
       bb
       bat
+
     ];
   };
 
