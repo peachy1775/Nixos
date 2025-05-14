@@ -17,8 +17,8 @@ _: {
 
       # General settings
       general = {
-        gaps_in = 2;
-        gaps_out = 5;
+        gaps_in = 0;
+        gaps_out = 0;
         #"col.active_border" = "rgb(7800e3) rgb(c452e0) 45deg";
         #"col.inactive_border" = "rgba(00000000)";
       };

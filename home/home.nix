@@ -97,7 +97,7 @@
       nyancat
       bb
       bat
-
+      xfce.tumbler
     ];
   };
 
