@@ -167,8 +167,18 @@
       udisks
       xfce.thunar-volman
       polkit_gnome
+      ntfs3g
+      ocl-icd
+      clinfo
     ];
   };
+
+hardware.graphics = {
+  enable = true;
+  extraPackages = with pkgs; [
+    intel-compute-runtime
+  ];
+};
 
   fonts = {
     packages = with pkgs; [
@@ -184,6 +194,6 @@
   };
 
   programs.hyprland.enable = true;
-
+  environment.etc."sbin/mount.ntfs".source = "${pkgs.ntfs3g}/bin/ntfs-3g";
   system.stateVersion = "24.11";
 }

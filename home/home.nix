@@ -7,6 +7,7 @@
     ./fastfetch.nix
     ./vscode.nix
     ./neovim.nix
+    ./git.nix
   ];
 
   home = {
@@ -101,16 +102,11 @@
       bat
       xfce.tumbler
       spice-gtk
+      gzip
     ];
   };
 
   programs = {
- 
-    git = {
-      enable = true;
-      userName = "Dont_Matta";
-      userEmail = "204289133+peachy1775@users.noreply.github.com";
-    };
 
     #zed-editor.enable = true;
 

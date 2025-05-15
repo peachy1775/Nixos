@@ -1,3 +1,4 @@
 .direnv/
 .env*
 result*
+~/.dotfiles/home/git.nix

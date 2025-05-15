@@ -1,95 +1,97 @@
-/**
- * @name Rose Pine
- * @author InvraNet
- * @authorLink https://github.com/SEELE1306
- * @description Soho vibes for discord.
- * @license GPLv3
- * @version 1.2.5
- * @authorId 488590546873483276
- * @discord invra.net
- **/
-
 .visual-refresh.theme-midnight, .visual-refresh .theme-midnight {
-    --bg-brand: #ebbcba;
-    --background-base-lower: #181624;
-    --background-base-lowest: #191724;
-    --background-base-low: #1f1d2e;
-    --background-primary: #1f1d2b;
-    --background-secondary: #191822;
-    --background-tertiary: #14131b;
-    --bg-base-tertiary: #191724;
-    --bg-base-secondary: #1d1b2b;
-    --bg-surface-overlay: #171524;
-    --bg-surface-raised: #171524;
-    --background-surface-high: #1c1929;
-    --background-surface-higher: #1e1b2c;
-    --background-surface-highest: #1b1825;
-    --background-secondary-alt: #1b1825;
-    --background-floating: #19162b;
-    --user-profile-overlay-background: #242138;
-    --card-primary-bg: #191724;
-    --custom-channel-members-bg: ;
+  --bg-brand: #f5c2e7;
+  --background-base-lower: #11111b;
+  --background-base-lowest: #11111b;
+  --background-base-low: #181825;
+  --background-primary: #1e1e2e;
+  --background-secondary: #181825;
+  --background-tertiary: #11111b;
+  --bg-base-tertiary: #181825;
+  --bg-base-secondary: #1e1e2e;
+  --bg-surface-overlay: #313244;
+  --bg-surface-raised: #313244;
+  --background-surface-high: #313244;
+  --background-surface-higher: #45475a;
+  --background-surface-highest: #585b70;
+  --background-secondary-alt: #585b70;
+  --background-floating: #1e1e2e;
+  --user-profile-overlay-background: #1e1e2e;
+  --card-primary-bg: #1e1e2e;
+  --custom-channel-members-bg: ;
 
-    --chat-background-default: #1f1d2e;
+  --chat-background-default: #1e1e2e;
 
-    --autocomplete-bg: #1b1927;
+  --autocomplete-bg: #1e1e2e;
 
-    --modal-footer-background: #1a1927;
-    --modal-background: #161622;
+  --modal-footer-background: #181825;
+  --modal-background: #181825;
 
-    --notice-background-positive: rgba(0,195,0, 0.15);
-    --notice-background-critical: rgba(255,0,0, 0.15);
+  --notice-background-positive: rgba(166, 227, 161, 0.15); /* Green */
+  --notice-background-critical: rgba(243, 139, 168, 0.15); /* Red */
 
-    --text-normal: #e0def4;
-    --text-code-keyword: #eb6f92;
-    --text-code-string: #9ccfd8;
-    --text-code-title: #31748f;
-    --text-code-variable: #64bbca;
+  --text-normal: #cdd6f4;
+  --text-code-keyword: #f38ba8;   /* Red */
+  --text-code-string: #a6e3a1;    /* Green */
+  --text-code-title: #89b4fa;     /* Blue */
+  --text-code-variable: #94e2d5;  /* Teal */
 
-    --twitch: #c4a7e752;
+  --twitch: #b4befe52;  /* Lavender with opacity */
 }
 
-.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8, .wrapper__6e9f8:hover .childWrapper__6e9f8 {
-  background-opacity: 50%;
-  background-color: #ebbcba55;
+/* Selected or hovered server/channel */
+.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8,
+.wrapper__6e9f8:hover .childWrapper__6e9f8 {
+background-opacity: 50%;
+background-color: #f5c2e755; /* Pink with opacity */
 }
 
+/* Streamer mode */
 .colorStreamerMode__6e2b9 {
-  --custom-notice-text: #c4a7e7;
+--custom-notice-text: #b4befe;
 }
 
-
+/* Call background */
 .callContainer_cb9592.theme-dark.theme-midnight {
-    background: #191822;
+  background: #181825;
 }
 
+/* Custom icon background */
 .midnightIcon__36dee {
-    background-color: #1f1d2e;
+  background-color: #1e1e2e;
 }
 
+/* Spotify mini-player */
 .theme-dark #vc-spotify-player {
-    background-color: var(--background-base-high);
+  background-color: var(--background-surface-high);
 }
 
+/* Hide the short status bar */
 .bar_c38106.shortBar_c38106 {
-    display: none;
+  display: none;
 }
 
+/* Button section background */
 .buttonSection__1405b.experimentButtonSection__1405b {
-    background: #1e1b2c;
+  background: #313244;
 }
 
-.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9, .theme-dark .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9, .theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9, .theme-dark.custom-theme-background .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9 {
-  background-color: #9ccfd855;
-  color: #9ccfd8;
+/* Active button styles */
+.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9,
+.theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9 {
+background-color: #a6e3a155;
+color: #a6e3a1;
 }
 
-.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:hover, .theme-dark .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:hover, .theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:hover, .theme-dark.custom-theme-background .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:hover {
-  background-color: #9ccfd877;
-  color: #9ccfd8;
+/* Hover on active buttons */
+.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:hover,
+.theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:hover {
+background-color: #a6e3a177;
+color: #a6e3a1;
 }
 
-.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:active, .theme-dark .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:active, .theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:active, .theme-dark.custom-theme-background .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:active {
-  background-color: #9ccfd99;
-  color: #9ccfd8;
+/* Active button click */
+.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:active,
+.theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:active {
+background-color: #a6e3a199;
+color: #a6e3a1;
 }
