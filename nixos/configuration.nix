@@ -27,6 +27,7 @@
 
   security.polkit.enable = true;
 
+
   services = {
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
@@ -125,7 +126,8 @@
   # VIRT
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-
+  virtualisation.spiceUSBRedirection.enable = true;
+  
   services.devmon.enable = true;
   services.gvfs.enable = true; 
   services.udisks2.enable = true;
@@ -137,6 +139,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  
+  users.groups.libvirt = {};
 
   users.users.peaches = {
     isNormalUser = true;
@@ -146,6 +150,7 @@
       "networkmanager"
       "wheel"
       "storage"
+      "libvirt"
     ];
     packages = with pkgs; [
       hyprland

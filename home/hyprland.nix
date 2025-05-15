@@ -13,7 +13,6 @@ _: {
         "waybar &"
         "swww-daemon &"
         "hyprctl dispatch workspace 1"
-        "/etc/profiles/per-user/peaches/libexec/polkit-gnome-authentication-agent-1"
       ];
 
       # General settings

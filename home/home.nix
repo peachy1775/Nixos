@@ -100,6 +100,7 @@
       bb
       bat
       xfce.tumbler
+      spice-gtk
     ];
   };
 
