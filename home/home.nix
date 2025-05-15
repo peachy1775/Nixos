@@ -22,8 +22,9 @@
       XDG_SESSION_TYPE = "wayland";
       XDG_SESSION_DESKTOP = "Hyprland";
       GTK_USE_PORTAL = "1";
+
     };
- 
+
     file = {
       ".config/ghostty" = {
         source = ./config/ghostty;
@@ -41,6 +42,7 @@
       ".config/waybar/style.css" = {
         source = ./config/waybar/style.css;
       };
+
     };
 
     packages = with pkgs; [
@@ -84,7 +86,7 @@
       wofi
       xorg.xprop
       xfce.thunar
-      zed-editor
+      #zed-editor
       zsh
       alejandra
       carapace
@@ -102,14 +104,14 @@
   };
 
   programs = {
-
+ 
     git = {
       enable = true;
       userName = "Dont_Matta";
       userEmail = "204289133+peachy1775@users.noreply.github.com";
     };
 
-    zed-editor.enable = true;
+    #zed-editor.enable = true;
 
     nushell = {
       enable = true;

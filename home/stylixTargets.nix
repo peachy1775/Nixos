@@ -9,7 +9,7 @@
       spicetify.enable = false;
       qt.enable = false;
       hyprland.enable = false;
-      zed.enable = true;
+      #zed.enable = true;
       vscode.enable = false;
       vencord.enable = false;
       vesktop.enable = true;

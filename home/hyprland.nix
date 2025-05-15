@@ -13,14 +13,16 @@ _: {
         "waybar &"
         "swww-daemon &"
         "hyprctl dispatch workspace 1"
+        "/etc/profiles/per-user/peaches/libexec/polkit-gnome-authentication-agent-1"
       ];
 
       # General settings
       general = {
         gaps_in = 0;
         gaps_out = 0;
-        #"col.active_border" = "rgb(7800e3) rgb(c452e0) 45deg";
-        #"col.inactive_border" = "rgba(00000000)";
+        border_size = 4;
+        "col.active_border" = "rgb(f586d2)";
+        "col.inactive_border" = "rgba(00000000)";
       };
 
       decoration = {
@@ -71,7 +73,7 @@ _: {
         "SUPER, V, exec, virt-manager"
         "SUPER, L, exec, pavucontrol"
         "SUPER, K, exec,  blueman-manager"
-        "SUPER, S, exec,  hyprshot -o /home/peaches/Downloads -m region"
+        "SUPER, S, exec,  hyprshot -o /home/peaches/Screenshots -m region"
         "SUPER ALT SHIFT, Q, exit"
         "SUPER LSHIFT, Space, togglefloating"
         "ALT, Return, fullscreen"

@@ -126,6 +126,10 @@
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -141,6 +145,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "storage"
     ];
     packages = with pkgs; [
       hyprland
@@ -151,7 +156,12 @@
       wayland
       wireplumber
       xdg-desktop-portal-hyprland
-
+      gvfs
+      usbutils 
+      udiskie 
+      udisks
+      xfce.thunar-volman
+      polkit_gnome
     ];
   };
 
