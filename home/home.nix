@@ -144,19 +144,12 @@
           betterSettings.enable = true;
           callTimer.enable = true;
           crashHandler.enable = true;
-          fixSpotifyEmbeds = {
-            enable = true;
-            volume = 9.0;
-          };
           fixYoutubeEmbeds.enable = true;
           imageZoom.enable = true;
           noF1.enable = true;
           onePingPerDM.enable = true;
           openInApp.enable = true;
           quickReply.enable = true;
-          spotifyControls.enable = true;
-          spotifyCrack.enable = true;
-          spotifyShareCommands.enable = true;
           voiceChatDoubleClick.enable = true;
           voiceDownload.enable = true;
           voiceMessages.enable = true;
@@ -165,18 +158,10 @@
             multiplier = 5;
           };
           webKeybinds.enable = true;
-          webRichPresence.enable = true;
           webScreenShareFixes.enable = true;
           youtubeAdblock.enable = true;
         };
       };
-    };
-  };
-  # Optional: improve build speed from user-level (limited)
-  nixpkgs = {
-    config = {
-      max-jobs = "auto";
-      cores = 0;
     };
   };
 }
