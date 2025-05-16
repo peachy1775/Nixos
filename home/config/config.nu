@@ -13,6 +13,7 @@ def nv [...args] { nvim $args.0 }
 def ncim [...args] { nvim $args.0 }
 def gc [...args] { git clone $args.0 }
 def v [...args] { code $args.0 }
+def pic [...args] { sxiv $args.0 }
 
 # Custom 'cd' command
 alias d = cd

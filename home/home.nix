@@ -7,7 +7,6 @@
     ./fastfetch.nix
     ./vscode.nix
     ./neovim.nix
-    ./git.nix
   ];
 
   home = {
