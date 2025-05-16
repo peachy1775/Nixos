@@ -2,4 +2,4 @@
 .env*
 result*
 home/git.nix
-
+ssh-agent.env
