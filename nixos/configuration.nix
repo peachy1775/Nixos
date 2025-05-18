@@ -27,7 +27,6 @@
 
   security.polkit.enable = true;
 
-
   services = {
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
@@ -127,9 +126,9 @@
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  
+
   services.devmon.enable = true;
-  services.gvfs.enable = true; 
+  services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   services.pipewire = {
@@ -139,8 +138,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
-  
-  users.groups.libvirt = {};
+
+  users.groups.libvirt = { };
 
   users.users.peaches = {
     isNormalUser = true;
@@ -162,8 +161,8 @@
       wireplumber
       xdg-desktop-portal-hyprland
       gvfs
-      usbutils 
-      udiskie 
+      usbutils
+      udiskie
       udisks
       xfce.thunar-volman
       polkit_gnome
@@ -173,12 +172,12 @@
     ];
   };
 
-hardware.graphics = {
-  enable = true;
-  extraPackages = with pkgs; [
-    intel-compute-runtime
-  ];
-};
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-compute-runtime
+    ];
+  };
 
   fonts = {
     packages = with pkgs; [

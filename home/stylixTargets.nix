@@ -9,12 +9,10 @@
       spicetify.enable = false;
       qt.enable = false;
       hyprland.enable = false;
-      #zed.enable = true;
       vscode.enable = false;
       vencord.enable = false;
-      vesktop.enable = true;
+      vesktop.enable = false;
       nixcord.enable = true;
-      emacs.enable = true;
     };
     fonts = {
       serif = {

@@ -71,10 +71,10 @@
       playerctl
       proton-pass
       protonmail-desktop
+      protonvpn-gui
       ripgrep
       slurp
       swww
-      sxiv
       teams-for-linux
       tree
       tmux
@@ -102,6 +102,7 @@
       xfce.tumbler
       spice-gtk
       gzip
+      imv
     ];
   };
 

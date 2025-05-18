@@ -13,7 +13,7 @@ def nv [...args] { nvim $args.0 }
 def ncim [...args] { nvim $args.0 }
 def gc [...args] { git clone $args.0 }
 def v [...args] { code $args.0 }
-def pic [...args] { sxiv $args.0 }
+def pic [...args] { imv $args.0 }
 
 # Custom 'cd' command
 alias d = cd
@@ -30,10 +30,7 @@ export def nixos-rbld [] {
   sudo nixos-rebuild switch --flake $".#((open config.toml).user.username)" --impure
   cd $currDir
 }
-alias clear = do {https://github.com/peachy1775/CTF-Chall_Write-Ups/commit/53e2b68c1e8621ab739f3e11e412d2a91cdca754
-  ^clear
-  screenfetch
-}
+
 export def dev [] {
   nix develop --command nu
 }
