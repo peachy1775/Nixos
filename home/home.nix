@@ -102,6 +102,7 @@
       spice-gtk
       gzip
       imv
+      bfg-repo-cleaner
     ];
   };
 
