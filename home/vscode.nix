@@ -7,15 +7,14 @@
       profiles.default = {
         extensions = with pkgs.vscode-extensions; [
           ms-python.python
-          ms-python.vscode-pylance
           ms-toolsai.jupyter
-          charliermarsh.ruff
-          ms-python.black-formatter
-          ms-vscode.cpptools
-          llvm-vs-code-extensions.vscode-clangd
           esbenp.prettier-vscode
           eamodio.gitlens
-          mhutchie.git-graph
+          ms-vscode.cpptools
+          llvm-vs-code-extensions.vscode-clangd
+          ms-vscode.cmake-tools
+          charliermarsh.ruff
+          ms-python.black-formatter
           vscode-icons-team.vscode-icons
           jnoortheen.nix-ide
           catppuccin.catppuccin-vsc
@@ -29,6 +28,10 @@
           "explorer.compactFolders" = false;
           "editor.wordWrap" = "on";
           "editor.formatOnSave" = true;
+
+          # Auto Save and Minimap
+          "files.autoSave" = "onWindowChange";
+          "editor.minimap.enabled" = false;
 
           # Nix formatting with nil
           "[nix]" = {
@@ -50,3 +53,4 @@
     };
   };
 }
+

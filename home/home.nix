@@ -48,7 +48,7 @@
     packages = with pkgs; [
       brave
       blueman
-      brightnessctl
+      #brightnessctl
       btop
       chromium
       curl
@@ -58,7 +58,7 @@
       gdk-pixbuf
       ghostty
       git
-      grim
+      #grim
       gtk3
       htop
       hyprshot
@@ -77,9 +77,8 @@
       swww
       teams-for-linux
       tree
-      tmux
       unzip
-      vlc
+      #vlc
       waybar
       wget
       wl-clipboard
