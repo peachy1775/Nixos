@@ -7,7 +7,7 @@
     ./fastfetch.nix
     ./vscode.nix
     ./neovim.nix
-    ./Fun.nix
+    ./funny.nix
   ];
 
   home = {
@@ -96,14 +96,7 @@
       gzip
       imv
       bfg-repo-cleaner
-      screenfetch
-      sl
-      pipes
-      cmatrix
-      asciiquarium
-      aalib
-      nyancat
-      bb
+
     ];
   };
 
