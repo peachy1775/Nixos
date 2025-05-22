@@ -93,6 +93,8 @@ _: {
         "SUPER SHIFT, 6, movetoworkspace, 7"
         "SUPER, mouse_up, workspace, e+1"
         "SUPER, mouse_down, workspace, e-1"
+        ", mouse:275, workspace, e+1"
+        ", mouse:276, workspace, e-1"
         ", XF86AudioRaiseVolume, exec, vol --up"
         ", XF86AudioLowerVolume, exec, vol --down"
         "SUPER, left, movefocus, l"
@@ -111,6 +113,7 @@ _: {
       bindm = [
         "SUPER, mouse:273, resizewindow"
         "SUPER, mouse:272, movewindow"
+
       ];
 
       windowrulev2 = [

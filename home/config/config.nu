@@ -17,6 +17,7 @@ def pic [...args] { imv $args.0 }
 
 # Custom 'cd' command
 alias d = cd
+alias clr = clear
 
 # Still works as a regular alias since it's a fixed command
 alias nfs = sudo nixos-rebuild switch --flake .#peaches

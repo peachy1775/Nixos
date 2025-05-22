@@ -7,6 +7,7 @@
     ./fastfetch.nix
     ./vscode.nix
     ./neovim.nix
+    ./Fun.nix
   ];
 
   home = {
@@ -89,14 +90,6 @@
       zsh
       alejandra
       carapace
-      screenfetch
-      sl
-      pipes
-      cmatrix
-      asciiquarium
-      aalib
-      nyancat
-      bb
       bat
       xfce.tumbler
       spice-gtk
