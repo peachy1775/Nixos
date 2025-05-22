@@ -96,6 +96,14 @@
       gzip
       imv
       bfg-repo-cleaner
+      screenfetch
+      sl
+      pipes
+      cmatrix
+      asciiquarium
+      aalib
+      nyancat
+      bb
     ];
   };
 
