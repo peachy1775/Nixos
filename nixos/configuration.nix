@@ -180,7 +180,7 @@
     flavor = "mocha";
     font  = "Noto Sans";
     fontSize = "16";
-    background = "${./home/config/.wallpapers/anom.jpg}";
+    background = "${../home/config/.wallpapers/anom.jpg}";
     loginBackground = true;
   }
 )];
