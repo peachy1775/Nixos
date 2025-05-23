@@ -1,10 +1,7 @@
 {pkgs,  ...}: {
   
-  packages = with pkgs; [
-    ghostty
-  ];
   
-  home.programs.ghostty = {
+  programs.ghostty = {
     enable = true;
       settings = {
         theme = "catppuccin-mocha";

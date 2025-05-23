@@ -2,15 +2,15 @@
 
 {
   imports = [
-    ./hyprland.nix
-    ./stylixTargets.nix
-    ./fastfetch.nix
-    ./vscode.nix
-    ./neovim.nix
-    ./funny.nix
-    ./ghostty.nix
+    ./modules/hyprland.nix
+    ./modules/stylixTargets.nix
+    ./modules/fastfetch.nix
+    ./modules/vscode.nix
+    ./modules/neovim.nix
+    ./modules/funny.nix
+    ./modules/ghostty.nix
   ];
-  
+
    home = {
     inherit username;
     homeDirectory = "/home/peaches";
