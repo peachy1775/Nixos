@@ -1,15 +1,20 @@
-{...}: {
-
+{ ... }:
+{
 
   programs = {
 
+    yazi = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
+
     #zed-editor.enable = true;
-   
-      nushell = {
-        enable = true;
-        configFile.source = ../config/config.nu;
-      };
-    
+
+    nushell = {
+      enable = true;
+      configFile.source = ../config/config.nu;
+    };
+
     starship = {
       enable = true;
       enableNushellIntegration = true;
@@ -60,4 +65,4 @@
       };
     };
   };
-}    
+}

@@ -13,7 +13,7 @@
     ./modules/files.nix
   ];
 
-   home = {
+  home = {
     inherit username;
     homeDirectory = "/home/peaches";
     stateVersion = "24.11";
@@ -28,10 +28,7 @@
       GTK_USE_PORTAL = "1";
 
     };
-
-
-
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
 }

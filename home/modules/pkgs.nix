@@ -1,59 +1,79 @@
-{pkgs, ...}: {
-    
-    home.packages = with pkgs; [
-      screenfetch
-      sl
-      pipes
-      cmatrix
-      asciiquarium
-      aalib
-      nyancat
-      bb
-      brave
-      blueman
-      #brightnessctl
-      btop
-      chromium
-      curl
-      dunst
-      file
-      fzf
-      gdk-pixbuf
-      git
-      gtk3
-      htop
-      hyprshot
-      killall
-      mpv
-      nil
-      nixd
-      nushellPlugins.polars
-      pavucontrol
-      playerctl
-      proton-pass
-      protonmail-desktop
-      protonvpn-gui
-      ripgrep
-      slurp
-      swww
-      teams-for-linux
-      tree
-      unzip
-      waybar
-      wget
-      wl-clipboard
-      wofi
-      xorg.xprop
-      xfce.thunar
-      zsh
-      alejandra
-      carapace
-      bat
-      xfce.tumbler
-      spice-gtk
-      gzip
-      imv
-      bfg-repo-cleaner
-    ];
-  
+{ pkgs, ... }:
+{
+
+  home.packages = with pkgs; [
+    #fun-terminal
+    aalib
+    asciiquarium
+    bb
+    cmatrix
+    nyancat
+    pipes
+    screenfetch
+    sl
+
+    #browsers
+    brave
+    chromium
+
+    #hyprland
+    hyprshot
+    killall
+    slurp
+    swww
+    waybar
+    wl-clipboard
+    wofi
+    xorg.xprop
+
+    #audio-media
+    mpv
+    pavucontrol
+    playerctl
+
+    #system-utils
+    blueman
+    brightnessctl
+    btop
+    curl
+    dunst
+    file
+    fzf
+    gdk-pixbuf
+    gzip
+    htop
+    tree
+    unzip
+    wget
+    zsh
+
+    #file-managers
+    xfce.thunar
+    xfce.tumbler
+
+    #dev-tools
+    alejandra
+    bat
+    bfg-repo-cleaner
+    carapace
+    git
+    nil
+    nixd
+    nushellPlugins.polars
+    ripgrep
+
+    #proton
+    proton-pass
+    protonmail-desktop
+    protonvpn-gui
+
+    #image-graphics
+    imv
+    spice-gtk
+
+    #misc
+    gtk3
+
+  ];
+
 }
