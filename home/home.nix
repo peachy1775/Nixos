@@ -7,7 +7,7 @@
     ./modules/fastfetch.nix
     ./modules/vscode.nix
     ./modules/neovim.nix
-    ./modules/funny.nix
+    ./modules/pkgs.nix
     ./modules/ghostty.nix
   ];
 
@@ -44,57 +44,7 @@
 
     };
 
-    packages = with pkgs; [
-      brave
-      blueman
-      #brightnessctl
-      btop
-      chromium
-      curl
-      dunst
-      file
-      fzf
-      gdk-pixbuf
-      git
-      #grim
-      gtk3
-      htop
-      hyprshot
-      killall
-      mpv
-      nil
-      nixd
-      nushellPlugins.polars
-      pavucontrol
-      playerctl
-      proton-pass
-      protonmail-desktop
-      protonvpn-gui
-      ripgrep
-      slurp
-      swww
-      teams-for-linux
-      tree
-      unzip
-      #vlc
-      waybar
-      wget
-      wl-clipboard
-      wofi
-      xorg.xprop
-      xfce.thunar
-      #zed-editor
-      zsh
-      alejandra
-      carapace
-      bat
-      xfce.tumbler
-      spice-gtk
-      gzip
-      imv
-      bfg-repo-cleaner
-
-    ];
+    packages = with pkgs; [];
   };
 
   programs = {
