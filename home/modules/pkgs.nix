@@ -20,7 +20,6 @@
       fzf
       gdk-pixbuf
       git
-      #grim
       gtk3
       htop
       hyprshot
@@ -40,14 +39,12 @@
       teams-for-linux
       tree
       unzip
-      #vlc
       waybar
       wget
       wl-clipboard
       wofi
       xorg.xprop
       xfce.thunar
-      #zed-editor
       zsh
       alejandra
       carapace

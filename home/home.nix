@@ -9,6 +9,7 @@
     ./modules/neovim.nix
     ./modules/pkgs.nix
     ./modules/ghostty.nix
+    ./modules/nu.nix
   ];
 
    home = {
@@ -50,11 +51,6 @@
   programs = {
 
     #zed-editor.enable = true;
-
-    nushell = {
-      enable = true;
-      configFile.source = ./config/config.nu;
-    };
    
     starship = {
       enable = true;
