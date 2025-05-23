@@ -3,7 +3,7 @@
 {
   imports = [
     ./modules/hyprland.nix
-    ./stylixTargets.nix
+    ./modules/stylixTargets.nix
     ./modules/fastfetch.nix
     ./modules/vscode.nix
     ./modules/neovim.nix
