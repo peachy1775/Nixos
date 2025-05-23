@@ -10,7 +10,6 @@
         configFile.source = ../config/config.nu;
       };
     
-
     starship = {
       enable = true;
       enableNushellIntegration = true;
