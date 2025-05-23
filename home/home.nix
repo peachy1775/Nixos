@@ -2,11 +2,11 @@
 
 {
   imports = [
-    ./hyprland.nix
+    ./modules/hyprland.nix
     ./stylixTargets.nix
     ./modules/fastfetch.nix
-    ./vscode.nix
-    ./neovim.nix
+    ./modules/vscode.nix
+    ./modules/neovim.nix
     ./modules/funny.nix
     ./modules/ghostty.nix
   ];
