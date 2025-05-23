@@ -8,9 +8,10 @@
     ./vscode.nix
     ./neovim.nix
     ./funny.nix
+    ./ghostty.nix
   ];
-
-  home = {
+  
+   home = {
     inherit username;
     homeDirectory = "/home/peaches";
     stateVersion = "24.11";
@@ -27,10 +28,7 @@
     };
 
     file = {
-      ".config/ghostty" = {
-        source = ./config/ghostty;
-        recursive = true;
-      };
+
       ".config/starship.toml" = {
         source = ./config/starship.toml;
       };
@@ -57,7 +55,6 @@
       file
       fzf
       gdk-pixbuf
-      ghostty
       git
       #grim
       gtk3
@@ -108,7 +105,7 @@
       enable = true;
       configFile.source = ./config/config.nu;
     };
-
+   
     starship = {
       enable = true;
       enableNushellIntegration = true;

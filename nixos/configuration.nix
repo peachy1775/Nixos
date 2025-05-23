@@ -34,6 +34,7 @@
     enable = true;
     theme = "catppuccin-mocha";
     package = pkgs.kdePackages.sddm;
+    autoLogin.user = "peaches";
   };
     xserver = {
       enable = true;
@@ -178,7 +179,7 @@
   pkgs.catppuccin-sddm.override {
     flavor = "mocha";
     font  = "Noto Sans";
-    fontSize = "9";
+    fontSize = "16";
     background = "${../home/config/.wallpapers/anom.jpg}";
     loginBackground = true;
   }
