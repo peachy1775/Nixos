@@ -20,7 +20,7 @@ _: {
         gaps_in = 0;
         gaps_out = 0;
         border_size = 4;
-        "col.active_border" = "rgb(f586d2)";
+        "col.active_border" = "rgb(3d85c6)";
         "col.inactive_border" = "rgba(00000000)";
       };
 

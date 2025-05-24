@@ -4,10 +4,12 @@
     ./stylix.nix
     ./hardware-configuration.nix
   ];
+  
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+  
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
     loader = {
@@ -16,7 +18,9 @@
       efi.canTouchEfiVariables = true;
     };
   };
+  
   security.polkit.enable = true;
+  
   services = {
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
@@ -33,14 +37,22 @@
       };
     };
   };
+  
   networking = {
     hostName = "peaches";
     networkmanager.enable = true;
   };
+  
   time.timeZone = "America/Chicago";
+  
   i18n.defaultLocale = "en_US.UTF-8";
+  
   services.getty.autologinUser = "peaches";
+  
+  
   nixpkgs.config.allowUnfree = true;
+
+
 environment = {
     variables = {
       GDK_SCALE = "1";
@@ -55,6 +67,7 @@ environment = {
       XDG_SESSION_TYPE = "wayland";
     };
 };
+   
    environment.etc."hosts".text = lib.mkForce  ''
       127.0.0.1 localhost
       ::1 localhost
@@ -68,13 +81,13 @@ environment = {
       0.0.0.0 msedge.api.cdp.microsoft.com
       0.0.0.0 az416426.vo.msecnd.net
       0.0.0.0 vortex.data.microsoft.com
-      0.0.0.0 go.microsoft.com
+      #0.0.0.0 go.microsoft.com
       0.0.0.0 errors.edge.microsoft.com
       # Authentication and Microsoft account login
-      0.0.0.0 login.microsoftonline.com
-      0.0.0.0 login.live.com
-      0.0.0.0 aadcdn.msauth.net
-      0.0.0.0 aadcdn.msftauth.net
+      #0.0.0.0 login.microsoftonline.com
+      #0.0.0.0 login.live.com
+      #0.0.0.0 aadcdn.msauth.net
+      #0.0.0.0 aadcdn.msftauth.net
       # Extension gallery and assets
       0.0.0.0 gallerycdn.vsassets.io
       0.0.0.0 msassets.visualstudio.com
@@ -83,23 +96,33 @@ environment = {
       # *.events.data.microsoft.com  
    '';
 
-  # BLUETOOTH #
+  # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  hardware.pulseaudio.enable = false;
-  # input and display
+  services.pulseaudio.enable = false;
+  
+  # Input and Display
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    config.common.default = "*"; # optional but useful
+    config.common.default = "*";
     extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
     ];
   };
+
   # VIRT
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+ 
+  # This is for USB to work in Thunar
+  services.devmon.enable = true;
+  services.gvfs.enable = true; 
+  services.udisks2.enable = true;
+
+  # Audio
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -107,6 +130,10 @@ environment = {
     pulse.enable = true;
     jack.enable = true;
   };
+  
+  # Creates Group libvirt to usb inside QEMU
+  users.groups.libvirt = {};
+
   users.users.peaches = {
     isNormalUser = true;
     description = "peaches";
@@ -114,7 +141,10 @@ environment = {
     extraGroups = [
       "networkmanager"
       "wheel"
+      "storage"
+      "libvirt"
     ];
+   
     packages = with pkgs; [
       hyprland
       pipewire
@@ -124,8 +154,24 @@ environment = {
       wayland
       wireplumber
       xdg-desktop-portal-hyprland
+      gvfs
+      usbutils 
+      udiskie 
+      udisks
+      polkit_gnome
+      ntfs3g
+      ocl-icd
+      clinfo
     ];
   };
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+     intel-compute-runtime
+  ];
+};
+
   fonts = {
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
@@ -138,6 +184,10 @@ environment = {
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];
   };
+  
   programs.hyprland.enable = true;
+  
+  environment.etc."sbin/mount.ntfs".source = "${pkgs.ntfs3g}/bin/ntfs-3g";
+  
   system.stateVersion = "24.11";
 }

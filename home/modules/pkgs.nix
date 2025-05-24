@@ -50,6 +50,7 @@
     #file-managers
     xfce.thunar
     xfce.tumbler
+    xfce.thunar-volman
 
     #dev-tools
     alejandra
@@ -73,6 +74,9 @@
 
     #misc
     gtk3
+
+    # Teams
+    teams-for-linux
 
   ];
 
