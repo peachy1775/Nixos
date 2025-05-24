@@ -30,14 +30,12 @@
   services = {
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
-    displayManager.sddm = {
-      enable = true;
-      theme = "catppuccin-mocha";
-      package = pkgs.kdePackages.sddm;
-      autoLogin.user = "peaches";
-    };
     xserver = {
       enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
       videoDrivers = [ "intel" ];
       xkb = {
         layout = "us";
@@ -171,19 +169,11 @@
       ntfs3g
       ocl-icd
       clinfo
-      catppuccin-sddm
     ];
   };
 
-  environment.systemPackages = [
-    (pkgs.catppuccin-sddm.override {
-      flavor = "mocha";
-      font = "Noto Sans";
-      fontSize = "16";
-      background = "${../home/config/.wallpapers/anom.jpg}";
-      loginBackground = true;
-    })
-  ];
+  environment.systemPackages = [];
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
