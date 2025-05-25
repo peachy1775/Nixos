@@ -15,9 +15,11 @@ def gc [...args] { git clone $args.0 }
 def v [...args] { code $args.0 }
 def pic [...args] { imv $args.0 }
 
+
 # Custom 'cd' command
 alias d = cd
 alias clr = clear
+alias y = yazi
 
 # Still works as a regular alias since it's a fixed command
 alias nfs = sudo nixos-rebuild switch --flake .#peaches
