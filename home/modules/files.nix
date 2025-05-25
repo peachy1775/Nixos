@@ -2,15 +2,6 @@
 {
   home = {
     file = {
-      ".config/yazi/yazi.toml".source = {
-        ../config/yazi/yazi.toml;
-      };
-      ".config/yazi/keymap.toml".source = {
-        ../config/yazi/keymap.toml;
-      };
-      ".config/yazi/theme.toml".source = {
-        ../config/yazi/theme.toml;
-      };
       ".config/starship.toml" = {
         source = ../config/starship.toml;
       };
