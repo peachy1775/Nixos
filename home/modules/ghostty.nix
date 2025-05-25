@@ -4,7 +4,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      theme = "neon";
+      theme = "catppuccin-mocha";
       background-opacity = 0.95;
       background-blur = true;
     };
@@ -21,7 +21,7 @@
           "4=#89b4fa"
           "5=#f5c2e7"
           "6=#94e2d5"
-          "7=#94e2d5"
+          "7=#bac2de"
           "8=#585b70"
           "9=#f38ba8"
           "10=#a6e3a1"
