@@ -6,13 +6,13 @@
     image = ../config/.wallpapers/anom.jpg;
     targets = {
       starship.enable = false;
-      spicetify.enable = false;
-      qt.enable = false;
       hyprland.enable = false;
       vscode.enable = false;
-      vencord.enable = false;
-      vesktop.enable = false;
-      nixcord.enable = true;
+    #  spicetify.enable = false;
+    #  qt.enable = false;
+    #  vencord.enable = false;
+    #  vesktop.enable = false;
+    #  nixcord.enable = true;
     };
     fonts = {
       serif = {

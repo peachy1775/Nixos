@@ -1,5 +1,11 @@
 { ... }:
 {
+  home.file.".config/helix/config.toml".source ={
+    ./config/helix/config.toml;
+  };
+  home.file.".config/helix/keymap.toml".source = {
+    ./config/helix/keymap.toml;
+  };
   home.file = {
     ".config/starship.toml" = {
       source = ../config/starship.toml;

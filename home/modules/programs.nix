@@ -3,6 +3,10 @@
 
   programs = {
 
+    helix = {
+      enable = true;
+    };
+
     yazi = {
       enable = true;
       enableNushellIntegration = true;
