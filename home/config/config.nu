@@ -38,3 +38,8 @@ export def dev [] {
   nix develop --command nu
 }
 
+
+# Load zoxide commands
+source ~/.config/nushell/zoxide.nu
+
+

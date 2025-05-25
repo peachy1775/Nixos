@@ -19,12 +19,12 @@
     #hyprland
     hyprshot
     killall
-    slurp
     swww
     waybar
     wl-clipboard
     wofi
     xorg.xprop
+    waypaper
 
     #audio-media
     mpv
@@ -41,11 +41,11 @@
     fzf
     gdk-pixbuf
     gzip
-    htop
     tree
     unzip
     wget
     zsh
+    bottom
 
     #file-managers
     xfce.thunar

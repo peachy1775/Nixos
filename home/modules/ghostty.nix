@@ -5,8 +5,8 @@
     enable = true;
     settings = {
       theme = "catppuccin-mocha";
-      background-opacity = 0.95;
-      background-blur = true;
+      background-opacity = 0.5;
+      background-blur = false;
     };
     themes = {
       catppuccin-mocha = {

@@ -3,7 +3,7 @@ _: {
     enable = true;
 
     settings = {
-      monitor = "DP-4,preferred,auto,2";
+      monitor = "DP-4,7680x2160@119.99700,auto,1.875";
 
       # Auto-launing
       exec-once = [
@@ -73,6 +73,10 @@ _: {
         "SUPER, L, exec, pavucontrol"
         "SUPER, K, exec,  blueman-manager"
         "SUPER, S, exec,  hyprshot -o /home/peaches/Screenshots -m region"
+        "SUPER, 7, exec, swww img ~/Wallpaper/Life.jpg --transition-type  random     --transition-fps 60 --transition-duration 1.7"
+        "SUPER, 8, exec, swww img ~/Wallpaper/mount.jpg --transition-type random    --transition-fps 60 --transition-duration 1.7"
+        "SUPER, 9, exec, swww img ~/Wallpaper/nice.jpg --transition-type  random    --transition-fps 60 --transition-duration 1.7"
+        "SUPER, 0, exec, swww img ~/Wallpaper/space.jpg --transition-type random  --transition-fps 60 --transition-duration 1.7"
         "SUPER, Print, exec, hyprshot -m window "
         "SUPER ALT SHIFT, Q, exit"
         "SUPER LSHIFT, Space, togglefloating"
@@ -101,6 +105,7 @@ _: {
         "SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
+      
       ];
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
