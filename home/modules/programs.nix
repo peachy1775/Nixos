@@ -3,9 +3,9 @@
 
   programs = {
 
-    helix = {
-      enable = true;
-    };
+    #helix = {
+    #  enable = true;
+    #};
 
     yazi = {
       enable = true;
