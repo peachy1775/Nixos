@@ -1,11 +1,6 @@
 { ... }:
 {
-  home.file.".config/helix/config.toml".source ={
-    ./config/helix/config.toml;
-  };
-  home.file.".config/helix/keymap.toml".source = {
-    ./config/helix/keymap.toml;
-  };
+
   home.file = {
     ".config/starship.toml" = {
       source = ../config/starship.toml;
@@ -18,6 +13,12 @@
     };
     ".config/waybar/style.css" = {
       source = ../config/waybar/style.css;
+    };
+      ".config/helix/settings.toml" = {
+      source =  ../config/helix/settings.toml;
+    };
+      ".config/helix/keymap.toml" = {
+      source = ../config/helix/keymap.toml;
     };
   };
 }
