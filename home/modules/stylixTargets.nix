@@ -9,11 +9,11 @@
       hyprland.enable = false;
       vscode.enable = false;
       helix.enable = false;
-    #  spicetify.enable = false;
-    #  qt.enable = false;
-    #  vencord.enable = false;
-    #  vesktop.enable = false;
-    #  nixcord.enable = true;
+    # spicetify.enable = false;
+    # qt.enable = false;
+    # vencord.enable = false;
+    # vesktop.enable = false;
+    # nixcord.enable = true;
     };
     fonts = {
       serif = {

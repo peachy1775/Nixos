@@ -19,8 +19,8 @@
     stateVersion = "24.11";
 
     sessionVariables = {
-      EDITOR = "code";
-      GIT_EDITOR = "code";
+      EDITOR = "hx";
+      GIT_EDITOR = "hx";
 
       XDG_CURRENT_DESKTOP = "Hyprland";
       XDG_SESSION_TYPE = "wayland";

@@ -1,7 +1,8 @@
-theme = "gruvbox"
+theme = "catppuccin_mocha"
+
 
 [editor]
-line-number = "absolute"
+line-number = "relative"
 mouse = false
 
 [editor.cursor-shape]
@@ -11,3 +12,6 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+g = "move_char_left"

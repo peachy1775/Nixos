@@ -20,5 +20,8 @@
       ".config/helix/keymap.toml" = {
       source = ../config/helix/keymap.toml;
     };
+      ".config/yazi/yazi.toml" = {
+        source = ../config/yazi/yazi.toml;
+      };
   };
 }
