@@ -8,6 +8,7 @@
       starship.enable = false;
       hyprland.enable = false;
       vscode.enable = false;
+      helix.enable = false;
     #  spicetify.enable = false;
     #  qt.enable = false;
     #  vencord.enable = false;

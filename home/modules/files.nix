@@ -14,11 +14,11 @@
     ".config/waybar/style.css" = {
       source = ../config/waybar/style.css;
     };
-      ".config/helix/settings.toml" = {
-      source =  ../config/helix/settings.toml;
+      ".config/helix/config.toml" = {
+      source =  ../config/helix/config.toml;
     };
-      ".config/helix/keymap.toml" = {
-      source = ../config/helix/keymap.toml;
+      ".config/helix/key.toml" = {
+      source = ../config/helix/key.toml;
     };
   };
 }
