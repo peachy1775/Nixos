@@ -80,6 +80,7 @@
 
     # Misc
     gtk3
+    pyright
 
     # Teams
     teams-for-linux

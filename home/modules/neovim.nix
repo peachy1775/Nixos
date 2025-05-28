@@ -92,7 +92,7 @@
       -- Mason LSP
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright" },
+        automatic_installation = false,
       })
 
       -- LSP setup
