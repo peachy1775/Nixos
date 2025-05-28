@@ -4,16 +4,17 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
     image = ../config/.wallpapers/anom.jpg;
+    cursor = {
+      package = pkgs.catppuccin-cursors.mochaLavender;
+      name = "cattppuccin-mocha-lavender-cursors";
+      size = 24;
+    };
     targets = {
+      
       starship.enable = false;
       hyprland.enable = false;
       vscode.enable = false;
       helix.enable = false;
-    # spicetify.enable = false;
-    # qt.enable = false;
-    # vencord.enable = false;
-    # vesktop.enable = false;
-    # nixcord.enable = true;
     };
     fonts = {
       serif = {

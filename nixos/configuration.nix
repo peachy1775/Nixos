@@ -1,4 +1,9 @@
 { pkgs, lib, ... }:
+
+let
+  myKernel = pkgs.linuxKernel.packages.linux_6_12;
+in
+
 {
   imports = [
     ./stylix.nix
@@ -10,14 +15,24 @@
     "flakes"
   ];
 
-  boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
-    loader = {
-      systemd-boot.enable = true;
-      systemd-boot.configurationLimit = 5;
-      efi.canTouchEfiVariables = true;
-    };
+
+boot = {
+  kernelPackages = myKernel;
+  kernelModules = [ "v4l2loopback" ];
+  extraModulePackages = with myKernel; [ v4l2loopback ];
+
+  loader = {
+    systemd-boot.enable = true;
+    systemd-boot.configurationLimit = 5;
+    efi.canTouchEfiVariables = true;
   };
+
+  extraModprobeConfig = ''
+    options v4l2loopback devices=1 video_nr=0 card_label="VirtualCamera" exclusive_caps=1
+  '';
+};
+
+ 
 
   security.polkit.enable = true;
 
@@ -53,11 +68,11 @@
 
   environment = {
     variables = {
+      XCURSOR_THEME = "cattppuccin-mocha-lavender-cursors";
       GDK_SCALE = "2";
       GDK_DPI_SCALE = "2";
       QT_SCALE_FACTOR = "2";
       QT_AUTO_SCREEN_SCALE_FACTOR = "2";
-      XCURSOR_SIZE = "48";
       WLR_DPI = "192";
       GTK_USE_PORTAL = "1";
       XDG_CURRENT_DESKTOP = "Hyprland";
@@ -141,6 +156,7 @@
       "wheel"
       "storage"
       "libvirt"
+      "video"
     ];
 
     packages = with pkgs; [

@@ -32,3 +32,8 @@
   };
 
 }
+
+###  This Is Good To Run Every Week On Monday  ###
+
+#sudo nix-collect-garbage -d
+#sudo /run/current-system/bin/switch-to-configuration boot

@@ -4,7 +4,7 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
     image = ../home/config/.wallpapers/anom.jpg;
-
+    
     targets = {
       spicetify.enable = false;
       qt.enable = false;

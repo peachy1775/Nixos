@@ -2,7 +2,7 @@
 {
 
   home.packages = with pkgs; [
-    #fun-terminal
+    # Fun-Terminal
     aalib
     asciiquarium
     bb
@@ -12,11 +12,11 @@
     screenfetch
     sl
 
-    #browsers
+    # Browsers
     brave
     chromium
 
-    #hyprland
+    # Hyprland
     hyprshot
     killall
     swww
@@ -26,12 +26,18 @@
     xorg.xprop
     waypaper
 
-    #audio-media
-    mpv
+    # Audio-Media-Webcam
     pavucontrol
     playerctl
+    droidcam
+    android-tools
+    v4l-utils
+    vlc
+    mpv
+    ffmpeg
 
-    #system-utils
+
+    # System-Utils
     blueman
     brightnessctl
     btop
@@ -47,12 +53,12 @@
     zsh
     bottom
 
-    #file-managers
+    # File-Managers
     xfce.thunar
     xfce.tumbler
     xfce.thunar-volman
 
-    #dev-tools
+    # Dev-Tools
     alejandra
     bat
     bfg-repo-cleaner
@@ -63,16 +69,16 @@
     nushellPlugins.polars
     ripgrep
 
-    #proton
+    # Proton
     proton-pass
     protonmail-desktop
     protonvpn-gui
 
-    #image-graphics
+    # Image-Graphics
     imv
     spice-gtk
 
-    #misc
+    # Misc
     gtk3
 
     # Teams
