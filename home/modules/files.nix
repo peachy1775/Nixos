@@ -2,11 +2,6 @@
 {
 
   home.file = {
-    
-    home.file.".config/nvim" = {
-      source = ../config/nvim;
-      recursive = true;
-    };
 
     ".config/starship.toml" = {
       source = ../config/starship.toml;
