@@ -111,8 +111,31 @@
         },
       })
 
-      -- Autopairs
-      require("nvim-autopairs").setup()
+
+            -- Autopairs setup
+      require("nvim-autopairs").setup({
+        check_ts = true,
+      })
+
+      -- Keymap to jump over any closing pair (like ), ], }, ", ')
+      vim.keymap.set("i", "<C-l>", function()
+        local col = vim.fn.col(".")
+        local char = vim.fn.getline("."):sub(col, col)
+        if vim.tbl_contains({ ")", "]", "}", '"', "'", "`" }, char) then
+          return "<Right>"
+        else
+          return "<C-l>"
+        end
+      end, { expr = true, noremap = true })
+      
+            -- jj to escape
+
+      vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
+      
+  
+      
+      -- Reduce the timeout for better responsiveness
+          vim.opt.timeoutlen = 150
 
       -- Surround
       require("nvim-surround").setup()
