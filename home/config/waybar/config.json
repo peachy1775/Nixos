@@ -23,13 +23,14 @@
     "tooltip": false
   },
   "bluetooth": {
-    "format": "",
+    "format": " ",
     "justify": "center",
     "rotate": 90,
     "interval": 5,
     "on-click": "blueman-manager",
     "tooltip": "Open Bluetooth Manager"
   },
+
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
@@ -76,7 +77,7 @@
   },
   "pulseaudio": {
     "rotate": 90,
-    "format": "{icon} {volume}%",
+    "format": "{icon}{volume}%",
     "format-bluetooth": "{icon} {volume}%",
     "format-muted": "MUTE ",
     "format-icons": {
@@ -86,7 +87,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", ""]
+      "default": [" ", " "]
     },
     "scroll-step": 3,
     "on-click": "pavucontrol",

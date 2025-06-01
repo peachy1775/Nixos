@@ -41,7 +41,6 @@
 /* Selected or hovered server/channel */
 .wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8,
 .wrapper__6e9f8:hover .childWrapper__6e9f8 {
-background-opacity: 50%;
 background-color: #f5c2e755; /* Pink with opacity */
 }
 

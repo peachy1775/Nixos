@@ -16,8 +16,8 @@ _: {
       general = {
         gaps_in = 0;
         gaps_out = 0;
-        border_size = 4;
-        "col.active_border" = "rgb(3d85c6)";
+        border_size = 0;
+        "col.active_border" = "rgb(313244)";
         "col.inactive_border" = "rgba(00000000)";
       };
 
@@ -33,9 +33,9 @@ _: {
       };
      
       # To Make Workspaces To Certain Ainimations
-animations = {
-  enabled = true;
-};
+        animations = {
+          enabled = true;
+        };
 
       # Inputs (keyboard & mouse)
       input = {
@@ -45,6 +45,16 @@ animations = {
         touchpad = {
           natural_scroll = true;
         };
+      };
+      
+
+      wayland.windowManager.hyprland.settings = {
+        windowrulev2 = [
+          "workspace 1 silent, class:^(com.mitchellh.ghostty)$"
+          "workspace 2 silent, class:^(Brave-browser)$"
+          "workspace 3 silent, class:^(Code)$"
+          "workspace 4 silent, class:^(teams-for-linux)$"
+        ];
       };
 
       render = {

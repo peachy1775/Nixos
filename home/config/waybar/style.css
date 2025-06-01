@@ -1,6 +1,6 @@
 * {
     border: none;
-    font-family: "Hack", "Font Awesome 6 Pro";
+    font-family: "Hack", "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 6 Pro", "SymbolsNerdFont";
     font-size: 15px;
     font-weight: 400;
     background: none;
@@ -14,7 +14,7 @@ window#waybar {
 .modules-right,
 .modules-center {
     border-radius: 6px;
-    background: rgba(25, 25, 38, 0.8);
+    background: rgba(30, 30, 46, 0.8);
     padding: 12px 0;
 }
 
@@ -29,50 +29,50 @@ tooltip * {
     text-shadow: none;
 }
 
-.modules-center {}
+/*.modules-center {}*/
 
 #custom-sep {
     color: rgba(47, 83, 144, 0.73);
     margin: 4px 0;
 }
 
-#workspaces,
+/*#workspaces,
 #clock,
 #custom-bluetooth_devices,
 #custom-powermenu,
 #pulseaudio,
-#tray {}
+#tray {}*/
 
 #workspaces {
     border-radius: 6px;
 }
 
 #workspaces button {
-    color: #55b6a6;
+    color: rgba(245, 194, 231, 0.693);
     background: none;
     padding: 0;
 }
 
 #workspaces button:hover {
-    color: #55b6a6;
+    color: #393351;
 }
 
 #workspaces button.active {
     font-weight: 600;
-    color: #55b6a6;
+    color: #4c2842;
 }
 
 #temperature {
-    color: #55b6a6;
+    color: #a6e3a1;
 }
 
 #clock {
     font-weight: 600;
-    color: #55b6a6;
+    color: #94e2d5;
 }
 
 #bluetooth {
-    color: #55b6a6;
+    color: #fab387;
 }
 
 #pulseaudio {
@@ -80,11 +80,11 @@ tooltip * {
 }
 
 #pulseaudio.muted {
-    color: #55b6a6;
+    color: #585b70;
 }
 
 #memory {
-    color: #55b6a6;
+    color: #585b70;
 }
 
 #custom-powermenu {

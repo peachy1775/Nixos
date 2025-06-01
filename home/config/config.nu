@@ -36,9 +36,18 @@ export def nixos-rbld [] {
 }
 
 export def dev [] {
-  nix develop --command nu
+  nix develop ~/Dev
 }
 
+def force-quit [] {
+  let pids = (run sh -c $"ps --ppid $nu.env.PID -o pid=" | lines)
+  $pids | each { |pid| run kill -9 $pid }
+  exit
+}
+
+def e [] {
+  exit
+}
 
 # Load zoxide commands
 source ~/.config/nushell/zoxide.nu
