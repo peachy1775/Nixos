@@ -52,11 +52,13 @@
     wget
     zsh
     bottom
+    nssmdns
 
     # File-Managers
     xfce.thunar
     xfce.tumbler
     xfce.thunar-volman
+    ulauncher
 
     # Dev-Tools
     alejandra

@@ -135,6 +135,18 @@ boot = {
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  # Enable Printing
+  services.printing = {
+  enable = true;
+  listenAddresses = [ "127.0.0.1:631" ];  # Enables the CUPS web UI
+  };
+  services.avahi = {
+  enable = true;
+  nssmdns4 = true;
+  openFirewall = true;
+  };
+services.printing.drivers = [ pkgs.gutenprint ];
+  
   # Audio
   services.pipewire = {
     enable = true;
@@ -146,6 +158,7 @@ boot = {
 
   # Creates Group libvirt to usb inside QEMU
   users.groups.libvirt = { };
+  users.groups.lpadmin = { };
 
   users.users.peaches = {
     isNormalUser = true;
@@ -157,6 +170,7 @@ boot = {
       "storage"
       "libvirt"
       "video"
+      "lpadmin"
     ];
 
     packages = with pkgs; [
@@ -168,7 +182,6 @@ boot = {
       wayland
       wireplumber
       xdg-desktop-portal-hyprland
-      gvfs
       usbutils
       udiskie
       udisks
@@ -176,6 +189,8 @@ boot = {
       ntfs3g
       ocl-icd
       clinfo
+      system-config-printer
+      gvfs 
     ];
   };
 

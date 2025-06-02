@@ -3,8 +3,9 @@ _: {
     enable = true;
 
     settings = {
-      monitor = "DP-4,7680x2160@119.99700,auto,1.875";
-
+      monitor = "DP-4,3840x2160@240.00Hz,auto,1.875";
+      #monitor = "DP-4,7680x2160@120.00Hz,auto,1.875";
+      
       # Auto-launing
       exec-once = [
         "hyprctl dispatch workspace 1"
@@ -54,6 +55,9 @@ _: {
           "workspace 2 silent, class:^(Brave-browser)$"
           "workspace 3 silent, class:^(Code)$"
           "workspace 4 silent, class:^(teams-for-linux)$"
+          "float, class:^(wofi)$"
+          "size, 400px 400px, class:^(wofi)$"
+          "center, class:^(wofi)$"
         ];
       };
 
@@ -86,7 +90,7 @@ _: {
         "SUPER, Y, exec,  mpv"
         "SUPER ALT SHIFT, Q, exit"
         "SUPER LSHIFT, Space, togglefloating"
-        "ALT, Return, fullscreen"
+        "ALT, RETURN, fullscreen" 
 
         # Screen Shot and BackGrounds
         "SUPER, Print, exec, hyprshot -m window "

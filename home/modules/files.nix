@@ -2,7 +2,12 @@
 {
 
   home.file = {
-
+    "/etc/nsswitch.conf" = {
+          source = ../config/nss/nsswitch.conf
+    }
+    ".config/wofi/config" = {
+          source = ../config/wofi/config;
+        };
     ".config/wofi/style.css" = {
           source = ../config/wofi/style.css;
         };
