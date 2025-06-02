@@ -3,6 +3,12 @@
 
   home.file = {
 
+    ".config/rofi/theme.rasi" = {
+      source = ../config/rofi/theme.rasi;
+    };
+    ".config/rofi/config.rasi" = {
+          source = ../config/rofi/config.rasi;
+        };
     ".config/starship.toml" = {
       source = ../config/starship.toml;
     };
