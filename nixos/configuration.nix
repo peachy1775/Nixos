@@ -142,7 +142,7 @@ boot = {
   };
   services.avahi = {
   enable = true;
-  nssmdns4 = true;
+  nssmdns = true;
   openFirewall = true;
   };
 services.printing.drivers = [ pkgs.gutenprint ];
