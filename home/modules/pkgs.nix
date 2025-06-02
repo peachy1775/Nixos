@@ -85,6 +85,9 @@
     # Teams
     teams-for-linux
 
+    # ICONS
+    papirus-icon-theme
+
   ];
 
 }

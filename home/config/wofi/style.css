@@ -9,20 +9,21 @@
 
 #window {
   margin: 0px;
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: #1e1e2e;
 }
 
 #input {
-  padding: 8px 12px;
-  border-radius: 10px;
-  background-color: #313244;
+  padding: 4px 8px; /* thinner input bar */
+  border-radius: 6px;
+  background-color: #1e1e2e;
+  border: 2px solid #89dceb; /* baby blue border */
   color: #cdd6f4;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 #inner-box {
-  padding: 10px;
+  padding: 6px;
 }
 
 #outer-box {
@@ -30,17 +31,18 @@
 }
 
 #entry {
-  padding: 10px;
-  border-radius: 10px;
-  margin: 5px 0;
+  padding: 1px;
+  border-radius: 1px;
+  margin: 1px 0;
 }
 
 #entry:selected {
-  background-color: #f5c2e7;
+  background-color: #89dceb; /* baby blue highlight */
   color: #1e1e2e;
 }
 
 #img {
-  margin-right: 8px;
-  size: 24px;
+  margin-right: 6px;
+  size: 22px;
 }
+

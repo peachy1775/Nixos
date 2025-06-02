@@ -1,0 +1,7 @@
+prompt=Search...
+show=drun
+allow_images=true
+hide_scroll=true
+term=ghostty
+allow_markup=true
+insensitive=true
