@@ -3,14 +3,16 @@ _: {
     enable = true;
 
     settings = {
-      monitor = "DP-4,3840x2160@240.00Hz,auto,1.875";
-      #monitor = "DP-4,7680x2160@120.00Hz,auto,1.875";
-      
+      #monitor = "DP-4,3840x2160@240.00Hz,auto,1.875";
+      monitor = "DP-4,7680x2160@120.00Hz,auto,1.875";
+
       # Auto-launing
       exec-once = [
         "hyprctl dispatch workspace 1"
         "waybar &"
         "swww-daemon &"
+        "udiskie &"
+        "wl-clipboard-x11 &"
       ];
 
       # General settings
@@ -32,11 +34,11 @@ _: {
           noise = 0.1;
         };
       };
-     
+
       # To Make Workspaces To Certain Ainimations
-        animations = {
-          enabled = true;
-        };
+      animations = {
+        enabled = true;
+      };
 
       # Inputs (keyboard & mouse)
       input = {
@@ -47,16 +49,16 @@ _: {
           natural_scroll = true;
         };
       };
-      
 
       wayland.windowManager.hyprland.settings = {
         windowrulev2 = [
           "workspace 1 silent, class:^(com.mitchellh.ghostty)$"
           "workspace 2 silent, class:^(Brave-browser)$"
           "workspace 3 silent, class:^(Code)$"
+          "workspace 3 silent, class:^(kitty)$"
           "workspace 4 silent, class:^(teams-for-linux)$"
           "float, class:^(wofi)$"
-          "size, 400px 400px, class:^(wofi)$"
+          "size, 200px 200px, class:^(wofi)$"
           "center, class:^(wofi)$"
         ];
       };
@@ -84,13 +86,14 @@ _: {
         "SUPER, M, exec, proton-mail"
         "SUPER, T, exec, teams-for-linux"
         "SUPER, V, exec, virt-manager"
-        "SUPER, L, exec, pavucontrol"
+        "SUPER, L, exec, libreoffice"
         "SUPER, K, exec,  blueman-manager"
         "SUPER, W, exec,  droidcam"
+        "SUPER, O, exec,  kitty"
         "SUPER, Y, exec,  mpv"
         "SUPER ALT SHIFT, Q, exit"
         "SUPER LSHIFT, Space, togglefloating"
-        "ALT, RETURN, fullscreen" 
+        "ALT, RETURN, fullscreen"
 
         # Screen Shot and BackGrounds
         "SUPER, Print, exec, hyprshot -m window "
@@ -148,5 +151,5 @@ _: {
         "pin, title:Picture-in-Picture"
       ];
     };
-  }; 
+  };
 }

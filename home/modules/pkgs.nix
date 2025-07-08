@@ -22,9 +22,11 @@
     swww
     waybar
     wl-clipboard
+    wl-clipboard-x11
     wofi
     xorg.xprop
     waypaper
+    xclip
 
     # Audio-Media-Webcam
     pavucontrol
@@ -35,7 +37,6 @@
     vlc
     mpv
     ffmpeg
-
 
     # System-Utils
     blueman
@@ -53,12 +54,16 @@
     zsh
     bottom
     nssmdns
+    pandoc
 
     # File-Managers
     xfce.thunar
     xfce.tumbler
     xfce.thunar-volman
     ulauncher
+    gparted
+    xorg.xhost
+    kitty
 
     # Dev-Tools
     alejandra
@@ -89,6 +94,9 @@
 
     # ICONS
     papirus-icon-theme
+
+    # Office
+    libreoffice
 
   ];
 

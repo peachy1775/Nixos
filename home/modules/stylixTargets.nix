@@ -10,7 +10,7 @@
       size = 24;
     };
     targets = {
-      
+
       starship.enable = false;
       hyprland.enable = false;
       vscode.enable = false;

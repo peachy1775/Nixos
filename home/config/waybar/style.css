@@ -1,93 +1,107 @@
 * {
     border: none;
-    font-family: "Hack", "JetBrainsMono Nerd Font", "FiraCode Nerd Font", "Font Awesome 6 Pro", "SymbolsNerdFont";
+    font-family: "Hack", "Font Awesome 6 Pro", "JetBrainsMono Nerd Font";
     font-size: 15px;
-    font-weight: 400;
-    background: none;
+    font-weight: bold;
+    border-radius: 20px;
 }
+
 
 window#waybar {
-    color: #a5adcb;
+    background: rgba(0, 0, 0, 0);
+}
+/*-----module groups----*/
+
+#workspaces button {
+  color: #91d7e3; /* default color */
+  background: transparent;
+  border: none;
 }
 
-.modules-left,
-.modules-right,
+#workspaces button.active {
+  color: #f0c6c6; /* your desired color for the active workspace */
+}
+.modules-right {
+    /*background-color: transparent;*/
+	background-color: rgb(14, 14, 16);
+    margin: 2px 10px 0 0;
+}
 .modules-center {
-    border-radius: 6px;
-    background: rgba(30, 30, 46, 0.8);
-    padding: 12px 0;
+    /*background-color: transparent;*/
+	background-color: rgb(14, 14, 16);
+    margin: 2px 0 0 0;
+}
+.modules-left {
+    /*background-color: transparent;*/
+    background-color: rgb(14, 14, 16);
+    margin: 2px 0 0 5px;
+	
+}
+/*-----modules indv----*/
+#workspaces button {
+    padding: 1px 5px;
+    background-color: transparent;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+	background-color: rgba(85, 182, 166,1);
 }
 
-tooltip {
-    color: #a5adcb;
-    background-color: #2c2f57;
-    text-shadow: none;
+#workspaces button.focused {
+	background-color: rgba(85, 90, 182, 0.85);
 }
 
-tooltip * {
-    color: #a5adcb;
-    text-shadow: none;
+#clock {
+    color: #8087a2;
+}
+#bluetooth {
+    color: #eba0ac;
+}
+#battery {
+    color: #85c1dc;
+}
+#memory {
+    color: #b4befe;
+} 
+#temperature {
+    color: #ea76cb;
 }
 
-/*.modules-center {}*/
-
+#network {
+    color: #7dc4e4;
+}
+#pulseaudio {
+    color: #dc8a78;
+}
+#tray,
 #custom-sep {
     color: rgba(47, 83, 144, 0.73);
     margin: 4px 0;
 }
 
-/*#workspaces,
-#clock,
-#custom-bluetooth_devices,
-#custom-powermenu,
-#pulseaudio,
-#tray {}*/
-
-#workspaces {
-    border-radius: 6px;
+/*-----Indicators----*/
+/*#idle_inhibitor.activated {
+    color: #2dcc36;
 }
-
-#workspaces button {
-    color: rgba(4, 165, 229, 0.907);
-    background: none;
-    padding: 0;
-}
-
-#workspaces button:hover {
-    color: #393351;
-}
-
-#workspaces button.active {
-    font-weight: 600;
-    color: #4c2842;
-}
-
-#temperature {
-    color: #a6e3a1;
-}
-
-#clock {
-    font-weight: 600;
-    color: #94e2d5;
-}
-
-#bluetooth {
-    color: #fab387;
-}
-
-#pulseaudio {
-    color: #55b6a6;
-}
-
 #pulseaudio.muted {
-    color: #585b70;
+    color: #cc3436;
 }
-
-#memory {
-    color: #585b70;
+#battery.charging {
+    color: #2dcc36;
 }
-
-#custom-powermenu {
-    margin: 12px 0 0 0;
-    color: #55b6a6;
+#battery.warning:not(.charging) {
+	color: #e6e600;
 }
+#battery.critical:not(.charging) {
+    color: #cc3436;
+}
+#temperature.critical {
+    color: #cc3436;
+}*/
+/*-----Colors----*/
+/*
+ *rgba(0,85,102,1),#005566 --> Indigo(dye)
+ *rgba(0,43,51,1),#002B33 --> Dark Green 
+ *rgba(0,153,153,1),#009999 --> Persian Green 
+ *
+ */

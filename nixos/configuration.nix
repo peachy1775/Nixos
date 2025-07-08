@@ -15,24 +15,21 @@ in
     "flakes"
   ];
 
+  boot = {
+    kernelPackages = myKernel;
+    kernelModules = [ "v4l2loopback" ];
+    extraModulePackages = with myKernel; [ v4l2loopback ];
 
-boot = {
-  kernelPackages = myKernel;
-  kernelModules = [ "v4l2loopback" ];
-  extraModulePackages = with myKernel; [ v4l2loopback ];
+    loader = {
+      systemd-boot.enable = true;
+      systemd-boot.configurationLimit = 5;
+      efi.canTouchEfiVariables = true;
+    };
 
-  loader = {
-    systemd-boot.enable = true;
-    systemd-boot.configurationLimit = 5;
-    efi.canTouchEfiVariables = true;
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=0 card_label="VirtualCamera" exclusive_caps=1
+    '';
   };
-
-  extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=0 card_label="VirtualCamera" exclusive_caps=1
-  '';
-};
-
- 
 
   security.polkit.enable = true;
 
@@ -136,17 +133,17 @@ boot = {
   services.udisks2.enable = true;
 
   # Enable Printing
-  services.printing = {
-  enable = true;
-  listenAddresses = [ "127.0.0.1:631" ];  # Enables the CUPS web UI
-  };
-  services.avahi = {
-  enable = true;
-  nssmdns = true;
-  openFirewall = true;
-  };
-services.printing.drivers = [ pkgs.gutenprint ];
-  
+#  services.printing = {
+#    enable = true;
+#    drivers = [ pkgs.gutenprint ];
+#    listenAddresses = [ "..." ]; # Enables the CUPS web UI
+#  };
+#  services.avahi = {
+#    enable = true;
+#    nssmdns = true;
+#    openFirewall = true;
+#  };
+
   # Audio
   services.pipewire = {
     enable = true;
@@ -171,6 +168,7 @@ services.printing.drivers = [ pkgs.gutenprint ];
       "libvirt"
       "video"
       "lpadmin"
+      "plugdev"
     ];
 
     packages = with pkgs; [
@@ -190,7 +188,7 @@ services.printing.drivers = [ pkgs.gutenprint ];
       ocl-icd
       clinfo
       system-config-printer
-      gvfs 
+      gvfs
     ];
   };
 
@@ -213,6 +211,12 @@ services.printing.drivers = [ pkgs.gutenprint ];
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];
   };
+
+      environment.shells = with pkgs; [
+        bashInteractive
+        zsh
+        nushell  # Add this if you're using nu
+      ];
 
   programs.hyprland.enable = true;
   networking.firewall.enable = true;

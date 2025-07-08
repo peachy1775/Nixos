@@ -1,34 +1,32 @@
 {
-  "layer": "top",
-  "position": "left",
-  "margin": "2 0 2 2",
-  "spacing": 2,
-  "modules-left": ["clock", "custom/sep", "tray"],
+  "modules-left": ["custom/sep", "memory", "custom/sep", "temperature", "custom/sep", "pulseaudio", "custom/sep"],
   "modules-center": ["hyprland/workspaces"],
-  "modules-right": [
-    "bluetooth",
-    "custom/sep",
-    "temperature",
-    "custom/sep",
-    "pulseaudio",
-    "custom/sep",
-    "memory"
-  ],
+  "modules-right": ["custom/sep", "tray","custom/sep","bluetooth", "custom/sep", "network", "custom/sep", "clock", "custom/sep"],
+
   "custom/sep": {
-    "format": ""
+    "format": " "
   },
-  "custom/powermenu": {
-    "on-click": "~/.config/wofi/scripts/wofipowermenu.py",
-    "format": "",
+
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", ""]
+  },
+
+  "network": {
+    "format-wifi": "   ({essid}) ",
+    "format-ethernet": "{ifname}  ",
+    "format-disconnected": " ",
+    "max-length": 50,
+    "on-click": "nm-applet"
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": " 󰍛 {}%",
+    "format-alt": " 󰍛 Mem: {}%",
     "tooltip": false
-  },
-  "bluetooth": {
-    "format": " ",
-    "justify": "center",
-    "rotate": 90,
-    "interval": 5,
-    "on-click": "blueman-manager",
-    "tooltip": "Open Bluetooth Manager"
   },
 
   "hyprland/workspaces": {
@@ -44,53 +42,41 @@
       "5": []
     },
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "/󰊻",
-      "5": "",
-      "active": ""
+      "1": "~/CLI",
+      "2": "1/Brave",
+      "3": "2/VIM",
+      "4": "3/LIBRE",
+      "5": "4/CHAT"
     }
   },
-  "clock": {
-    "tooltip": true,
-    "format": "{:%H\n%M}",
-    "tooltip-format": "{:%Y-%m-%d}"
-  },
+
   "tray": {
-    "icon-size": 18,
-    "show-passive-items": "true"
+    "icon-size": 15,
+    "spacing": 10
   },
-  "memory": {
-    "rotate": 90,
-    "interval": 30,
-    "format": "󰍛 {}%",
-    "format-alt": "󰍛 Mem: {}%",
-    "tooltip": false
+
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}",
+    "on-click": "gnome-calendar"
   },
-  "temperature": {
-    "rotate": 90,
-    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-    "critical-threshold": 80,
-    "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""]
-  },
-  "pulseaudio": {
-    "rotate": 90,
-    "format": "{icon}{volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "MUTE ",
-    "format-icons": {
-      "headphones": "",
-      "handsfree": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [" ", " "]
-    },
-    "scroll-step": 3,
-    "on-click": "pavucontrol",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle"
+
+"pulseaudio": {
+  "format": " {volume}%",
+  "format-muted": " 0%",
+  "format-source": "{volume}% ",
+  "format-source-muted": "",
+  "on-click": "pavucontrol",
+  "scroll-step": 5
+},
+
+"bluetooth": {
+    "format": "  ",
+    "justify": "center",
+    "interval": 5,
+    "on-click": "blueman-manager",
+    "tooltip": "Open Bluetooth Manager"
   }
+
+
 }

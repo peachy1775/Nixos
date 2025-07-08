@@ -25,6 +25,7 @@ alias usb = yazi /run/media/peaches
 # Still works as a regular alias since it's a fixed command
 alias nfs = sudo nixos-rebuild switch --flake .#peaches
 alias nfu = sudo nixos-rebuild switch --flake .#peaches --update
+alias gparted = sudo -E gparted
 
 export def nixos-rbld [] {
   let currDir = $"(pwd)"
