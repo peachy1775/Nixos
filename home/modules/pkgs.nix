@@ -26,7 +26,6 @@
     wofi
     xorg.xprop
     waypaper
-    xclip
 
     # Audio-Media-Webcam
     pavucontrol
@@ -48,6 +47,7 @@
     fzf
     gdk-pixbuf
     gzip
+    networkmanagerapplet
     tree
     unzip
     wget
@@ -60,7 +60,6 @@
     xfce.thunar
     xfce.tumbler
     xfce.thunar-volman
-    ulauncher
     gparted
     xorg.xhost
     kitty
@@ -68,7 +67,6 @@
     # Dev-Tools
     alejandra
     bat
-    bfg-repo-cleaner
     carapace
     git
     nil

@@ -6,14 +6,25 @@ $env.editor = "code";
 screenfetch
 
 # ENV's
-$env.XDG_CONFIG_DIRS = $"($env.XDG_CONFIG_DIRS):($env.HOME)/.config"
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
+
 
 # Custom commands instead of aliases with args
-def nv [...args] { nvim $args.0 }
-def ncim [...args] { nvim $args.0 }
+def nv [...args] {
+  nvim ...$args
+}
+def ncim [...args] {
+  nvim ...$args
+}
 def gc [...args] { git clone $args.0 }
-def v [...args] { code $args.0 }
-def pic [...args] { imv $args.0 }
+# Open file or dir in VS Code
+def v [...args] {
+  code ...$args
+}
+# Open image(s) in imv
+def pic [...args] {
+  imv ...$args
+}
 
 
 # Custom 'cd' command
@@ -24,15 +35,17 @@ alias usb = yazi /run/media/peaches
 
 # Still works as a regular alias since it's a fixed command
 alias nfs = sudo nixos-rebuild switch --flake .#peaches
-alias nfu = sudo nixos-rebuild switch --flake .#peaches --update
+#alias nfu = sudo nix flake update
 alias gparted = sudo -E gparted
 
-export def nixos-rbld [] {
-  let currDir = $"(pwd)"
-  rm -rf $"($env.HOME)/.gtkrc-2.0"
-  cd $"($env.HOME)/.nix"
+export def nfu [] {
+  let currDir = (pwd)
+# Navigate to your flake dir
+  cd $"($env.HOME)/.dotfiles"
+# Update the flake and rebuild
   sudo nix flake update
-  sudo nixos-rebuild switch --flake $".#((open config.toml).user.username)" --impure
+  sudo nixos-rebuild switch --flake .#peaches
+# Return to previous directory
   cd $currDir
 }
 

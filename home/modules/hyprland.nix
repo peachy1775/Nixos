@@ -12,14 +12,13 @@ _: {
         "waybar &"
         "swww-daemon &"
         "udiskie &"
-        "wl-clipboard-x11 &"
-      ];
+        ];
 
       # General settings
       general = {
         gaps_in = 0;
         gaps_out = 0;
-        border_size = 0;
+        border_size = 0;        
         "col.active_border" = "rgb(313244)";
         "col.inactive_border" = "rgba(00000000)";
       };
@@ -39,6 +38,7 @@ _: {
       animations = {
         enabled = true;
       };
+
 
       # Inputs (keyboard & mouse)
       input = {
@@ -60,11 +60,10 @@ _: {
           "float, class:^(wofi)$"
           "size, 200px 200px, class:^(wofi)$"
           "center, class:^(wofi)$"
+          # No screen Share
+          "noscreenshare, class:^(Proton Pass)$"
+          "noscreenshare, class:^(Proton Mail)$"
         ];
-      };
-
-      render = {
-        explicit_sync = false;
       };
 
       dwindle = {
@@ -87,9 +86,9 @@ _: {
         "SUPER, T, exec, teams-for-linux"
         "SUPER, V, exec, virt-manager"
         "SUPER, L, exec, libreoffice"
-        "SUPER, K, exec,  blueman-manager"
+        "SUPER, K, exec,  kitty"
         "SUPER, W, exec,  droidcam"
-        "SUPER, O, exec,  kitty"
+        "SUPER, O, exec,  blueman-manager"
         "SUPER, Y, exec,  mpv"
         "SUPER ALT SHIFT, Q, exit"
         "SUPER LSHIFT, Space, togglefloating"
@@ -128,8 +127,8 @@ _: {
         "SUPER, down, movefocus, d"
 
         # Mouse and Audio
-        ", mouse:275, workspace, e+1"
-        ", mouse:276, workspace, e-1"
+        ", mouse:275, workspace, e-1"
+        ", mouse:276, workspace, e+1"
         ", XF86AudioRaiseVolume, exec, vol --up"
         ", XF86AudioLowerVolume, exec, vol --down"
 
