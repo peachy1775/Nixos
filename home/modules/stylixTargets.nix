@@ -15,6 +15,7 @@
       hyprland.enable = false;
       vscode.enable = false;
       helix.enable = false;
+      
     };
     fonts = {
       serif = {

@@ -52,7 +52,7 @@
           fixYoutubeEmbeds.enable = true;
           imageZoom.enable = true;
           noF1.enable = true;
-          onePingPerDM.enable = true;
+          onePingPerDm.enable = true;
           openInApp.enable = true;
           quickReply.enable = true;
           voiceChatDoubleClick.enable = true;
@@ -60,7 +60,7 @@
           voiceMessages.enable = true;
           volumeBooster = {
             enable = true;
-            multiplier = 5;
+            multiplier = 5.0;
           };
           webKeybinds.enable = true;
           webScreenShareFixes.enable = true;

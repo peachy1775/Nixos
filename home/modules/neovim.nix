@@ -29,7 +29,7 @@
       nvim-web-devicons
     ];
 
-    extraLuaConfig = ''
+      initLua = ''
       -- ##################################
       -- ####   CORE EDITOR OPTIONS    ####
       -- ##################################
@@ -130,19 +130,21 @@
       require("toggleterm").setup()
       vim.keymap.set("n", "<leader>t", ":ToggleTerm<CR>", { noremap = true, silent = true })
 
-
       -- ##################################
       -- ####    MASON & LSP CONFIG    ####
       -- ##################################
 
-      require("mason").setup()
-      require("mason-lspconfig").setup({
-        automatic_installation = false,
+require("mason").setup()
+require("mason-lspconfig").setup({
+  automatic_installation = false,
+  handlers = {
+    function(server_name)
+      require("lspconfig")[server_name].setup({
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
       })
-
-      local lspconfig = require("lspconfig")
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      lspconfig.pyright.setup({ capabilities = capabilities })
+    end,
+  },
+})
 
       -- ##################################
       -- ####       NVIM-CMP SETUP     ####
@@ -195,7 +197,7 @@
 
       -- ##################################
       -- ####    FAST ESC & BINDINGS   ####
-      -- ################################## journalctl -b -1 -e
+      -- ##################################
 
       vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
 

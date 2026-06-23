@@ -34,21 +34,25 @@ in
   security.polkit.enable = true;
 
   services = {
-    qemuGuest.enable = true;
-    spice-vdagentd.enable = true;
-    xserver = {
-      enable = true;
-      displayManager.gdm = {
-        enable = true;
-        wayland = true;
-      };
-      videoDrivers = [ "intel" ];
-      xkb = {
-        layout = "us";
-        options = "eurosign:e,caps:escape";
-      };
+  qemuGuest.enable = true;
+  spice-vdagentd.enable = true;
+
+  xserver = {
+    enable = true;
+
+    videoDrivers = [ "intel" ];
+
+    xkb = {
+      layout = "us";
+      options = "eurosign:e,caps:escape";
     };
   };
+
+displayManager.gdm = {
+  enable = true;
+};
+
+};
 
   networking = {
     hostName = "peaches";
@@ -205,9 +209,9 @@ in
       nerd-fonts.jetbrains-mono
       font-awesome
       corefonts
-      vistafonts
+      vista-fonts
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       cantarell-fonts
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];

@@ -96,6 +96,9 @@
     # Office
     libreoffice
 
+    # Note Taking
+    obsidian
+
   ];
 
 }
