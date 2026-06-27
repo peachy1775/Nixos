@@ -11,7 +11,7 @@
     ./modules/programs.nix
     ./modules/files.nix
   ];
-
+xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
   home = {
     inherit username;
     homeDirectory = "/home/peaches";
