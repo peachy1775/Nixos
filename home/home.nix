@@ -6,7 +6,6 @@
     ./modules/stylixTargets.nix
     ./modules/fastfetch.nix
     ./modules/vscode.nix
-    ./modules/neovim.nix
     ./modules/pkgs.nix
     ./modules/ghostty.nix
     ./modules/programs.nix
