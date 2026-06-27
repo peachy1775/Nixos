@@ -179,6 +179,7 @@ displayManager.gdm = {
 
     packages = with pkgs; [
       hyprland
+      niri
       pipewire
       pulseaudio
       qemu
@@ -225,6 +226,7 @@ displayManager.gdm = {
       ];
 
   programs.hyprland.enable = true;
+  programs.niri.enable = true;
   networking.firewall.enable = true;
   environment.etc."sbin/mount.ntfs".source = "${pkgs.ntfs3g}/bin/ntfs-3g";
 
