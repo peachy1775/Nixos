@@ -76,9 +76,9 @@ displayManager.gdm = {
       QT_AUTO_SCREEN_SCALE_FACTOR = "2";
       WLR_DPI = "192";
       GTK_USE_PORTAL = "1";
-      XDG_CURRENT_DESKTOP = "Hyprland";
-      XDG_SESSION_DESKTOP = "Hyprland";
-      XDG_SESSION_TYPE = "wayland";
+  XDG_CURRENT_DESKTOP = "KDE";
+  XDG_SESSION_DESKTOP = "KDE";
+  XDG_SESSION_TYPE = "wayland";
       
     };
   };
@@ -119,11 +119,10 @@ displayManager.gdm = {
   # Input and Display
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
-    config.common.default = "*";
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
+  enable = true;
+  extraPortals = with pkgs; [
+    xdg-desktop-portal-kde
+    xdg-desktop-portal-gtk
     ];
   };
 
@@ -225,8 +224,8 @@ displayManager.gdm = {
         nushell  # Add this if you're using nu
       ];
 
-  programs.hyprland.enable = true;
-  programs.niri.enable = true;
+# programs.hyprland.enable = true; 
+# programs.niri.enable = true; 
   networking.firewall.enable = true;
   environment.etc."sbin/mount.ntfs".source = "${pkgs.ntfs3g}/bin/ntfs-3g";
 
