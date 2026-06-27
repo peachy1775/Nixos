@@ -165,7 +165,7 @@ displayManager.gdm = {
   users.users.peaches = {
     isNormalUser = true;
     description = "peaches";
-    initalPassword = "whatever";
+    initialPassword = "whatever";
     shell = pkgs.nushell;
     extraGroups = [
       "networkmanager"
