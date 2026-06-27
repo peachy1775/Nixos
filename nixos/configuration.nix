@@ -63,7 +63,7 @@ displayManager.gdm = {
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.getty.autologinUser = "peaches";
+  
 
   nixpkgs.config.allowUnfree = true;
 
