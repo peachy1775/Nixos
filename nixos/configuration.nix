@@ -177,15 +177,15 @@ displayManager.gdm = {
     ];
 
     packages = with pkgs; [
-      hyprland
-      niri
+      # hyprland
+      # niri
       pipewire
       pulseaudio
       qemu
       virt-manager
       wayland
       wireplumber
-      xdg-desktop-portal-hyprland
+      # xdg-desktop-portal-hyprland
       usbutils
       udiskie
       udisks
