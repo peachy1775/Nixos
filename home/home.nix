@@ -11,19 +11,20 @@
     ./modules/programs.nix
     ./modules/files.nix
   ];
-xdg.configFile."hypr/hyprland.lua".source = ./hyprland.lua;
+   xdg.configFile."hypr/hyprland.lua".source = ./modules/hyprland.lua;
+
   home = {
     inherit username;
     homeDirectory = "/home/peaches";
-    stateVersion = "24.11";
+    stateVersion = "26.05";
 
     sessionVariables = {
       EDITOR = "nvim";
       GIT_EDITOR = "nvim";
 
-      XDG_CURRENT_DESKTOP = "Hyprland";
-      XDG_SESSION_TYPE = "wayland";
-      XDG_SESSION_DESKTOP = "Hyprland";
+      XDG_CURRENT_DESKTOP = "hyprland";
+      XDG_SESSION_TYPE = "hyprland";
+      XDG_SESSION_DESKTOP = "KDE";
       GTK_USE_PORTAL = "1";
 
     };
