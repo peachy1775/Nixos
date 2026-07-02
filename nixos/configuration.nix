@@ -63,7 +63,7 @@ displayManager.gdm = {
 
   i18n.defaultLocale = "en_US.UTF-8";
 
-  
+
 
   nixpkgs.config.allowUnfree = true;
 
@@ -76,10 +76,10 @@ displayManager.gdm = {
       QT_AUTO_SCREEN_SCALE_FACTOR = "2";
       WLR_DPI = "192";
       GTK_USE_PORTAL = "1";
-  XDG_CURRENT_DESKTOP = "KDE";
-  XDG_SESSION_DESKTOP = "KDE";
+  XDG_CURRENT_DESKTOP = "hyprland";
+  XDG_SESSION_DESKTOP = "hyprland";
   XDG_SESSION_TYPE = "wayland";
-      
+
     };
   };
 
@@ -108,7 +108,7 @@ displayManager.gdm = {
     0.0.0.0 msassets.visualstudio.com
     # Optional - wildcard block (note: /etc/hosts doesn't support wildcards)
     # Use Pi-hole or custom DNS for these
-    # *.events.data.microsoft.com  
+    # *.events.data.microsoft.com
   '';
 
   # Bluetooth
@@ -118,11 +118,9 @@ displayManager.gdm = {
 
   # Input and Display
   xdg.portal = {
-    enable = true;
   enable = true;
   extraPortals = with pkgs; [
-    xdg-desktop-portal-kde
-    xdg-desktop-portal-gtk
+    kdePackages.xdg-desktop-portal-kde
     ];
   };
 
@@ -177,15 +175,15 @@ displayManager.gdm = {
     ];
 
     packages = with pkgs; [
-      # hyprland
-      # niri
+      hyprland
+      niri
       pipewire
       pulseaudio
       qemu
       virt-manager
       wayland
       wireplumber
-      # xdg-desktop-portal-hyprland
+      xdg-desktop-portal-hyprland
       usbutils
       udiskie
       udisks
@@ -224,8 +222,8 @@ displayManager.gdm = {
         nushell  # Add this if you're using nu
       ];
 
-# programs.hyprland.enable = true; 
-# programs.niri.enable = true; 
+  programs.hyprland.enable = true;
+  programs.niri.enable = true;
   networking.firewall.enable = true;
   environment.etc."sbin/mount.ntfs".source = "${pkgs.ntfs3g}/bin/ntfs-3g";
 
