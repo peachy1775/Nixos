@@ -3,15 +3,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-26.05";
     stylix.url = "github:danth/stylix";
-    nixcord.url = "github:kaylorben/nixcord";
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -22,7 +17,6 @@
       nixpkgs,
       home-manager,
       stylix,
-      nixcord,
       ...
     }:
     let
@@ -52,7 +46,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
-              sharedModules = [ inputs.nixcord.homeModules.nixcord ];
+              sharedModules = [ ];
               users.peaches = ./home/home.nix;
               extraSpecialArgs = {
                 inherit

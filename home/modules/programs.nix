@@ -3,16 +3,10 @@
 
   programs = {
 
-    helix = {
-      enable = true;
-    };
-
     yazi = {
       enable = true;
       enableNushellIntegration = true;
     };
-
-    #zed-editor.enable = true;
 
     nushell = {
       enable = true;
@@ -36,37 +30,5 @@
       options = [ "--cmd cd" ];
     };
 
-    nixcord = {
-      enable = true;
-      discord.enable = false;
-      vesktop.enable = true;
-      quickCss = builtins.readFile ../config/vesktop/main.css;
-      config = {
-        useQuickCss = true;
-        themeLinks = [ ];
-        frameless = true;
-        plugins = {
-          betterSettings.enable = true;
-          callTimer.enable = true;
-          crashHandler.enable = true;
-          fixYoutubeEmbeds.enable = true;
-          imageZoom.enable = true;
-          noF1.enable = true;
-          onePingPerDm.enable = true;
-          openInApp.enable = true;
-          quickReply.enable = true;
-          voiceChatDoubleClick.enable = true;
-          voiceDownload.enable = true;
-          voiceMessages.enable = true;
-          volumeBooster = {
-            enable = true;
-            multiplier = 5.0;
-          };
-          webKeybinds.enable = true;
-          webScreenShareFixes.enable = true;
-          youtubeAdblock.enable = true;
-        };
-      };
-    };
   };
 }

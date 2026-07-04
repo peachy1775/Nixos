@@ -23,8 +23,8 @@
       GIT_EDITOR = "nvim";
 
       XDG_CURRENT_DESKTOP = "hyprland";
-      XDG_SESSION_TYPE = "hyprland";
-      XDG_SESSION_DESKTOP = "KDE";
+      XDG_SESSION_TYPE = "wayland";
+      XDG_SESSION_DESKTOP = "hyprland";
       GTK_USE_PORTAL = "1";
 
     };

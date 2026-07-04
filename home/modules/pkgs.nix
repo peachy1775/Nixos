@@ -1,8 +1,11 @@
 { pkgs, ... }:
-{
 
+{
   home.packages = with pkgs; [
-    # Fun-Terminal
+
+    # -------------------------
+    # FUN / TERMINAL TOYS
+    # -------------------------
     aalib
     asciiquarium
     bb
@@ -12,22 +15,27 @@
     screenfetch
     sl
 
-    # Browsers
+    # -------------------------
+    # BROWSERS
+    # -------------------------
     brave
     chromium
 
-    # Hyprland
+    # -------------------------
+    # HYPRLAND (KEEP FOR FUTURE SWITCH)
+    # -------------------------
     hyprshot
-    killall
-    swww
+    awww
     waybar
     wl-clipboard
     wl-clipboard-x11
     wofi
-    xorg.xprop
     waypaper
+    wayle
 
-    # Audio-Media-Webcam
+    # -------------------------
+    # AUDIO / MEDIA / VIDEO
+    # -------------------------
     pavucontrol
     playerctl
     droidcam
@@ -37,8 +45,9 @@
     mpv
     ffmpeg
 
-    # System-Utils
-    blueman
+    # -------------------------
+    # SYSTEM UTILITIES (USER-LEVEL ONLY)
+    # -------------------------
     brightnessctl
     btop
     curl
@@ -47,24 +56,24 @@
     fzf
     gdk-pixbuf
     gzip
-    networkmanagerapplet
     tree
     unzip
     wget
-    zsh
     bottom
-    nssmdns
     pandoc
 
-    # File-Managers
-    xfce.thunar
-    xfce.tumbler
-    xfce.thunar-volman
+    # -------------------------
+    # FILE MANAGERS
+    # -------------------------
+    thunar
+    tumbler
+    thunar-volman
     gparted
-    xorg.xhost
     kitty
 
-    # Dev-Tools
+    # -------------------------
+    # DEV TOOLS
+    # -------------------------
     alejandra
     bat
     carapace
@@ -73,32 +82,28 @@
     nixd
     nushellPlugins.polars
     ripgrep
+    pyright
 
-    # Proton
+    # -------------------------
+    # PROTON APPS
+    # -------------------------
     proton-pass
     protonmail-desktop
-    protonvpn-gui
+    proton-vpn
 
-    # Image-Graphics
+    # -------------------------
+    # IMAGE / GRAPHICS
+    # -------------------------
     imv
     spice-gtk
 
-    # Misc
+    # -------------------------
+    # MISC APPS
+    # -------------------------
     gtk3
-    pyright
-
-    # Teams
     teams-for-linux
-
-    # ICONS
     papirus-icon-theme
-
-    # Office
     libreoffice
-
-    # Note Taking
     obsidian
-
   ];
-
 }

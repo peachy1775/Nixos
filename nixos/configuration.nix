@@ -1,10 +1,13 @@
 { pkgs, lib, ... }:
 
+
+
 let
   myKernel = pkgs.linuxKernel.packages.linux_6_12;
 in
 
 {
+
   imports = [
     ./stylix.nix
     ./hardware-configuration.nix
@@ -134,18 +137,6 @@ displayManager.gdm = {
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  # Enable Printing
-#  services.printing = {
-#    enable = true;
-#    drivers = [ pkgs.gutenprint ];
-#    listenAddresses = [ "..." ]; # Enables the CUPS web UI
-#  };
-#  services.avahi = {
-#    enable = true;
-#    nssmdns = true;
-#    openFirewall = true;
-#  };
-
   # Audio
   services.pipewire = {
     enable = true;
@@ -173,6 +164,7 @@ displayManager.gdm = {
       "lpadmin"
       "plugdev"
     ];
+
 
     packages = with pkgs; [
       hyprland
@@ -211,7 +203,6 @@ displayManager.gdm = {
       vista-fonts
       noto-fonts
       noto-fonts-color-emoji
-      cantarell-fonts
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];
   };
